@@ -1,0 +1,13 @@
+package pageUIs.nopCommerce.user;
+
+public class MyProductReviewPageUI {
+
+	public static final String CUSTOMERINFO_LINK = "XPATH=//a[text()= 'Customer info']";
+	public static final String ADDRESS_LINK = "XPATH=//div[@class='side-2']//a[text()= 'Addresses']";
+	public static final String REWARDPOINT_LINK = "XPATH=//a[text()= 'Reward points']";
+	public static final String MYPRODUCTREVIEW_LINK = "XPATH=//a[text()= 'My product reviews']";
+	public static final String REVIEW_TITLE_TEXT = "//div[@class='review-title']//strong";
+	public static final String REVIEW_TEXT = "//div[@class='review-text']";
+	public static final String PRODUCT_REVIEW_TEXT = "//div[@class='review-info']//a[text()='Build your own computer']";
+
+}

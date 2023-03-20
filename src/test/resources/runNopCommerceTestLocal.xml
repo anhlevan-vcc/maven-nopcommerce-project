@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NopCommerceProject" parallel="false" thread-count="2">
+	<listeners>
+		<listener class-name="commons.MethodListener"></listener>
+		<listener class-name="reportConfig.ReportNGListener"></listener>
+		<listener class-name="reportConfig.ExtentTestListener"></listener>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
+	</listeners>
+	<parameter name="envName" value="local"></parameter>
+	<parameter name="serverName" value="DEV"></parameter>
+	<test name="Run on Firefox">
+		<parameter name="browser" value="Firefox"></parameter>
+		<parameter name="osName" value=""></parameter>
+		<parameter name="osVersion" value=""></parameter>
+		<parameter name="browserVersion" value=""></parameter>
+		<packages>
+			<exclude name="com.nopcommerce.*" />
+		</packages>
+		<classes>
+			<class name="com.nopcommerce.common.Common_01_Register" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_01_Register" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_02_Login" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_03_My_Account" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_04_Search" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_05_Sort_Display_Paging" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_06_Wishlist_Compare_RecentReview" />
+			<class name="com.nopcommerce.user.Nopcommerce_07_Order" />
+		</classes>
+	</test>
+	<test name="Run on Chrome">
+		<parameter name="browser" value="Chrome"></parameter>
+		<parameter name="osName" value=""></parameter>
+		<parameter name="osVersion" value=""></parameter>
+		<parameter name="browserVersion" value=""></parameter>
+		<packages>
+			<exclude name="com.nopcommerce.*" />
+		</packages>
+		<classes>
+			<exclude name="com.nopcommerce.common.Common_01_Register" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_01_Register" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_02_Login" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_03_My_Account" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_04_Search" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_05_Sort_Display_Paging" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_06_Wishlist_Compare_RecentReview" />
+			<exclude name="com.nopcommerce.user.Nopcommerce_07_Order" />
+		</classes>
+	</test>
+</suite>
