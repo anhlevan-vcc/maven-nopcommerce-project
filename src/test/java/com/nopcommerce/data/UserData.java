@@ -50,4 +50,15 @@ public class UserData {
 		public static final String PRODUCT_NAME_5 = "Samsung Series 9 NP900X4C Premium Ultrabook";
 		public static final String PRICE_TEXT = "$1,800.00";
 	}
+
+	public static class BuildYourOwnComputer {
+		public static final String PROCESSOR = "2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]";
+		public static final String RAM = "8GB [+$60.00]";
+		public static final String HDD = "400 GB [+$100.00]";
+		public static final String OS = "Vista Premium [+$60.00]";
+		public static final String SOFTWARE_ONE = "Microsoft Office [+$50.00]";
+		public static final String SOFTWARE_TWO = "Acrobat Reader [+$10.00]";
+		public static final String SOFTWARE_THREE = "Total Commander [+$5.00]";
+		public static final String SUB_TOTAL = "$1,500.00";
+	}
 }

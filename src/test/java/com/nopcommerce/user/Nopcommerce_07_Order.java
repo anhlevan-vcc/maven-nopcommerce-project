@@ -1,5 +1,6 @@
 package com.nopcommerce.user;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.lang.reflect.Method;
@@ -13,6 +14,7 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 import com.nopcommerce.common.Common_01_Register;
+import com.nopcommerce.data.UserData;
 
 import commons.BaseTest;
 import commons.PageGeneratorManager;
@@ -33,6 +35,7 @@ public class Nopcommerce_07_Order extends BaseTest {
 	private UserBuildComputerDetailPageObject buildComputerDetailPage;
 
 	private String validEmail, validPassword;
+	private String processor, ram, hdd, os, softwareOne, softwareTwo, softwareThree, subTotal;
 
 	@Parameters({ "envName", "serverName", "browser", "ipAddress", "portNumber", "osName", "osVersion", "browserVersion" })
 	@BeforeClass
@@ -44,6 +47,15 @@ public class Nopcommerce_07_Order extends BaseTest {
 
 		validEmail = Common_01_Register.email;
 		validPassword = Common_01_Register.password;
+
+		processor = UserData.BuildYourOwnComputer.PROCESSOR;
+		ram = UserData.BuildYourOwnComputer.RAM;
+		hdd = UserData.BuildYourOwnComputer.HDD;
+		os = UserData.BuildYourOwnComputer.OS;
+		softwareOne = UserData.BuildYourOwnComputer.SOFTWARE_ONE;
+		softwareTwo = UserData.BuildYourOwnComputer.SOFTWARE_TWO;
+		softwareThree = UserData.BuildYourOwnComputer.SOFTWARE_THREE;
+		subTotal = UserData.BuildYourOwnComputer.SUB_TOTAL;
 
 		// logExtentV5( "Pre-condition - Step 01: Open login page");
 		loginPage = homePage.openLoginPage();
@@ -64,29 +76,55 @@ public class Nopcommerce_07_Order extends BaseTest {
 	@Test
 	public void Order_01_Add_Product_To_Cart(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
-		logExtentV5("Order_01 - Step 01: Select dropdown Processor with value is '2.2 GHz Intel Pentium Dual-Core E2200'");
-		buildComputerDetailPage.selectDropdownByName(driver, "product_attribute_1", "2.2 GHz Intel Pentium Dual-Core E2200");
+		logExtentV5("Order_01 - Step 01: Select dropdown Processor with value is '" + processor + "'");
+		buildComputerDetailPage.selectDropdownByName(driver, "product_attribute_1", processor);
 
-		logExtentV5("Order_01 - Step 01: Select dropdown RAM with value is '8GB [+$60.00]'");
-		buildComputerDetailPage.selectDropdownByName(driver, "product_attribute_2", "8GB [+$60.00]");
+		logExtentV5("Order_01 - Step 01: Select dropdown RAM with value is '" + ram + "'");
+		buildComputerDetailPage.selectDropdownByName(driver, "product_attribute_2", ram);
 
-		logExtentV5("Order_01 - Step 01: Select radio button HDD with value is '400 GB [+$100.00]'");
-		buildComputerDetailPage.clickToRadioButtonByLabel(driver, "400 GB [+$100.00]");
+		logExtentV5("Order_01 - Step 01: Select radio button HDD with value is '" + hdd + "'");
+		buildComputerDetailPage.clickToRadioButtonByLabel(driver, hdd);
 
-		logExtentV5("Order_01 - Step 01: Select radio button OS with value is 'Vista Premium [+$60.00]'");
-		buildComputerDetailPage.clickToRadioButtonByLabel(driver, "Vista Premium [+$60.00]");
+		logExtentV5("Order_01 - Step 01: Select radio button OS with value is '" + os + "'");
+		buildComputerDetailPage.clickToRadioButtonByLabel(driver, os);
 
-		logExtentV5("Order_01 - Step 01: Select checkbox Software with value is 'Microsoft Office [+$50.00]'");
-		buildComputerDetailPage.clickToRadioButtonByLabel(driver, "Microsoft Office [+$50.00]");
+		logExtentV5("Order_01 - Step 01: Select checkbox Software with value is '" + softwareOne + "'");
+		buildComputerDetailPage.clickToRadioButtonByLabel(driver, softwareOne);
 
-		logExtentV5("Order_01 - Step 01: Select checkbox Software with value is 'Acrobat Reader [+$10.00]'");
-		buildComputerDetailPage.clickToRadioButtonByLabel(driver, "Acrobat Reader [+$10.00]");
+		logExtentV5("Order_01 - Step 01: Select checkbox Software with value is '" + softwareTwo + "'");
+		buildComputerDetailPage.clickToRadioButtonByLabel(driver, softwareTwo);
 
-		logExtentV5("Order_01 - Step 01: Select checkbox Software with value is 'Total Commander [+$5.00]'");
-		buildComputerDetailPage.clickToRadioButtonByLabel(driver, "Total Commander [+$5.00]");
+		logExtentV5("Order_01 - Step 01: Select checkbox Software with value is '" + softwareThree + "'");
+		buildComputerDetailPage.clickToRadioButtonByLabel(driver, softwareThree);
 
 		logExtentV5("Order_01 - Step 01: Click button Add to cart");
 		buildComputerDetailPage.clickToButtonByText(driver, "Add to cart");
+
+		logExtentV5("Order_01 - Step 01: Verify mesage success add to cart displayed");
+		assertEquals(buildComputerDetailPage.getMessageSuccessAtBuildComputerDetail(), "The product has been added to your shopping cart");
+
+		logExtentV5("Order_01 - Step 01: Close message");
+		buildComputerDetailPage.clickIconClose();
+
+		logExtentV5("Order_01 - Step 01: Hover mouse at shopping cart");
+		buildComputerDetailPage.hoverToShoppingCart();
+		
+		logExtentV5("Order_01 - Step 01: Verify Message Count displayed");
+		assertEquals(buildComputerDetailPage.getMessageCountDisplayed(), "There are 1 item(s) in your cart.");
+		
+		logExtentV5("Order_01 - Step 01: Verify Product Name displayed");
+		assertEquals(buildComputerDetailPage.getProductNameDisplayed(), "Build your own computer");
+		
+		logExtentV5("Order_01 - Step 01: Verify Attributes product displayed");
+		assertEquals(buildComputerDetailPage.getAttributesDisplayed(), "Processor: " + processor + "\n" + "RAM: " + ram + "\n" + "HDD: " + hdd + "\n" + "OS: " + os + "\n"
+				+ "Software: " + softwareOne + "\n"
+				+ "Software: " + softwareTwo + "\n" + "Software: " + softwareThree);
+
+		logExtentV5("Order_01 - Step 01: Verify Prace product displayed");
+		assertEquals(buildComputerDetailPage.getPraceDisplayed(), "Unit price: " + subTotal);
+
+		logExtentV5("Order_01 - Step 01: Verify Sub Total product displayed");
+		assertEquals(buildComputerDetailPage.getSubTotalDisplayed(), "Sub-Total: " + subTotal);
 
 	}
 
