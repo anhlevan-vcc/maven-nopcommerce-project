@@ -3,6 +3,7 @@ package com.nopcommerce.common;
 import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
@@ -73,14 +74,12 @@ public class Common_01_Register extends BaseTest {
 		log.info("Pre-condition - Step 11: Verify register success message is displayed");
 		assertEquals(registerPage.getMessageSuccess(), "Your registration completed");
 
-		log.info("Pre-condition - Step 12 : Open login page");
-		loginPage = registerPage.clickToLoginLink();
-
 		driver.quit();
 	}
 
-	@AfterTest
-	public void afterTest() {
+	@AfterClass(alwaysRun = true)
+	public void afterClass() {
+		closeBrowserAndDriver();
 	}
 
 }

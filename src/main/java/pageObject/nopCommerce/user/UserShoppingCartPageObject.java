@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import commons.PageGeneratorManager;
+import pageObject.nopCommerce.user.productdetail.UserBuildComputerDetailPageObject;
 import pageUIs.nopCommerce.user.ShoppingCartPageUI;
 
 public class UserShoppingCartPageObject extends BasePage {
@@ -28,5 +29,26 @@ public class UserShoppingCartPageObject extends BasePage {
 		clickToElement(driver, ShoppingCartPageUI.COMPUTER_AT_HEADER_LINK);
 		return PageGeneratorManager.getUserComputersPage(driver);
 
+	}
+
+	public UserBuildComputerDetailPageObject clickEditProductLink() {
+		waitForElementClickable(driver, ShoppingCartPageUI.EDIT_PRODUCT_LINK);
+		clickToElement(driver, ShoppingCartPageUI.EDIT_PRODUCT_LINK);
+		return PageGeneratorManager.getUserBuildComputerPage(driver);
+	}
+
+	public void clickRemoveIcon() {
+		waitForElementClickable(driver, ShoppingCartPageUI.REMOVE_ICON);
+		clickToElement(driver, ShoppingCartPageUI.REMOVE_ICON);
+	}
+
+	public String getMessageDisplayed() {
+		waitForElementVisible(driver, ShoppingCartPageUI.MESSAGE_AT_SHOPPING_TEXT);
+		return getElementText(driver, ShoppingCartPageUI.MESSAGE_AT_SHOPPING_TEXT);
+	}
+
+	public void inputToQtyTextbox(String qtyValue) {
+		waitForElementVisible(driver, ShoppingCartPageUI.QTY_TEXTBOX);
+		sendkeyToElement(driver, ShoppingCartPageUI.QTY_TEXTBOX, qtyValue);
 	}
 }

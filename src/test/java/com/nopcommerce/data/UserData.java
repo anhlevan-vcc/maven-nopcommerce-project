@@ -60,5 +60,11 @@ public class UserData {
 		public static final String SOFTWARE_TWO = "Acrobat Reader [+$10.00]";
 		public static final String SOFTWARE_THREE = "Total Commander [+$5.00]";
 		public static final String SUB_TOTAL = "$1,500.00";
+		public static final String UPDATE_PROCESSOR = "2.2 GHz Intel Pentium Dual-Core E2200";
+		public static final String UPDATE_RAM = "4GB [+$20.00]";
+		public static final String UPDATE_HDD = "320 GB";
+		public static final String UPDATE_OS = "Vista Home [+$50.00]";
+		public static final String UPDATE_PRACE = "$1,320.00";
+		public static final String UPDATE_SUB_TOTAL = "$2,640.00";
 	}
 }

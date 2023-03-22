@@ -14,18 +14,6 @@ public class UserWishlistPageObject extends BasePage {
 		this.driver = driver;
 	}
 
-	public boolean isProductNameAtWishlistDisplayed(String headerColumnClass, String cellValue) {
-		int columnIndex = getElementSize(driver, WishlistPageUI.TABLE_HEADER_INDEX_BY_HEADER_CLASS, headerColumnClass) + 1;
-		waitForElementVisible(driver, WishlistPageUI.TABLE_NAME_VALUE_BY_HEADER_INDEX, String.valueOf(columnIndex), cellValue);
-		return isElementDisplayed(driver, WishlistPageUI.TABLE_NAME_VALUE_BY_HEADER_INDEX, String.valueOf(columnIndex), cellValue);
-	}
-
-	public boolean isProductAtWishlistDisplayed(String headerColumnClass, String cellValue) {
-		int columnIndex = getElementSize(driver, WishlistPageUI.TABLE_HEADER_INDEX_BY_HEADER_CLASS, headerColumnClass) + 1;
-		waitForElementVisible(driver, WishlistPageUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(columnIndex), cellValue);
-		return isElementDisplayed(driver, WishlistPageUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(columnIndex), cellValue);
-	}
-
 	public void clickToShareLink() {
 		waitForElementClickable(driver, WishlistPageUI.SHARE_LINK);
 		clickToElement(driver, WishlistPageUI.SHARE_LINK);
@@ -54,10 +42,6 @@ public class UserWishlistPageObject extends BasePage {
 	public String getMessageText() {
 		waitForElementVisible(driver, WishlistPageUI.MESSAGE_TEXT);
 		return getElementText(driver, WishlistPageUI.MESSAGE_TEXT);
-	}
-
-	public boolean isProductNameAtWishlistUnDisplayed(String cellValue) {
-		return isElementUndisplayed(driver, WishlistPageUI.TABLE_NAME_VALUE_BY_NAME, cellValue);
 	}
 
 }

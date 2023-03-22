@@ -36,6 +36,7 @@ import pageObject.nopCommerce.user.UserMyProductReviewPageObject;
 import pageObject.nopCommerce.user.UserOrdersPageObject;
 import pageObject.nopCommerce.user.UserRewardPointPageObject;
 import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
+import pageUIs.nopCommerce.user.WishlistPageUI;
 
 public class BasePage {
 
@@ -592,6 +593,19 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 	}
 
+	/*
+	 * Sử dụng cho wait cho attribute có chứa 1 đoạn text
+	 */
+	protected void waitForAttributeContainValue(WebDriver driver, String locatorType, String attribute, String value) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		explicitWait.until(ExpectedConditions.attributeContains(getByLocator(locatorType), attribute, value));
+	}
+
+	protected void waitForAttributeContainValue(WebDriver driver, String locatorType, String attribute, String value, String... dynamicValues) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		explicitWait.until(ExpectedConditions.attributeContains(getByLocator(getDynamicXpath(locatorType, dynamicValues)), attribute, value));
+	}
+
 	public WebElement findElementFluentwait(WebDriver driver, String locatorType) {
 		FluentWait<WebDriver> fluentDriver;
 		fluentDriver = new FluentWait<WebDriver>(driver);
@@ -777,6 +791,8 @@ public class BasePage {
 			return PageGeneratorManager.getCompareProductPage(driver);
 		case "Recently viewed products":
 			return PageGeneratorManager.getRecentlyViewedProductsPage(driver);
+		case "Shopping cart":
+			return PageGeneratorManager.getUserShoppingCartPage(driver);
 		default:
 			throw new RuntimeException("Invalid page name at My Account area");
 		}
@@ -864,6 +880,17 @@ public class BasePage {
 	}
 
 	/**
+	 * Uncheck to dynamic Radio by Label Name
+	 * 
+	 * @param driver
+	 * @param radioLabelName
+	 */
+	public void unCheckToRadioButtonByLabel(WebDriver driver, String radioLabelName) {
+		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_RADIOBUTTON_BY_LABEL, radioLabelName);
+		unCheckToDefaultCheckbox(driver, BasePageNopCommerceUI.DYNAMIC_RADIOBUTTON_BY_LABEL, radioLabelName);
+	}
+
+	/**
 	 * Verify to dynamic Radio by Label Name selected
 	 * 
 	 * @param driver
@@ -896,6 +923,22 @@ public class BasePage {
 	public String getTextboxValueByID(WebDriver driver, String textboxID, String AttributeValue) {
 		waitForElementVisible(driver, BasePageNopCommerceUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
 		return getElementAttribute(driver, BasePageNopCommerceUI.DYNAMIC_TEXTBOX_BY_ID, AttributeValue, textboxID);
+	}
+
+	public boolean isProductNameDisplayed(WebDriver driver, String headerColumnClass, String cellValue) {
+		int columnIndex = getElementSize(driver, BasePageNopCommerceUI.TABLE_HEADER_INDEX_BY_HEADER_CLASS, headerColumnClass) + 1;
+		waitForElementVisible(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_HEADER_INDEX, String.valueOf(columnIndex), cellValue);
+		return isElementDisplayed(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_HEADER_INDEX, String.valueOf(columnIndex), cellValue);
+	}
+
+	public boolean isProductDisplayed(WebDriver driver, String headerColumnClass, String cellValue) {
+		int columnIndex = getElementSize(driver, BasePageNopCommerceUI.TABLE_HEADER_INDEX_BY_HEADER_CLASS, headerColumnClass) + 1;
+		waitForElementVisible(driver, BasePageNopCommerceUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(columnIndex), cellValue);
+		return isElementDisplayed(driver, BasePageNopCommerceUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(columnIndex), cellValue);
+	}
+
+	public boolean isProductNameUnDisplayed(WebDriver driver, String cellValue) {
+		return isElementUndisplayed(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_NAME, cellValue);
 	}
 
 }

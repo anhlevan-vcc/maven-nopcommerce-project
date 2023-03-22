@@ -1,2 +1,2 @@
-[INFO ] [2023-03-21 17:57:24,622] OS name = windows 10
-[INFO ] [2023-03-21 17:57:24,622] Driver instance name = firefoxdriver: firefox on windows (d3aa54f4-740a-47ec-a1f8-26c9c55ea7fa)
+[INFO ] [2023-03-22 23:06:56,719] OS name = windows 10
+[INFO ] [2023-03-22 23:06:56,740] Driver instance name = chromedriver: chrome on windows (403d2207bcf054d7e9c6336c67bfbd30)

@@ -150,13 +150,13 @@ public class Nopcommerce_06_Wishlist_Compare_RecentReview extends BaseTest {
 		wishlistPage = appleMacBookProDetailPage.clickToWishlistLink();
 
 		ExtentTestManager.getTest().log(Status.INFO, "Wishlist 01 - Step 05: Verify table contains '" + productName0 + "'");
-		assertTrue(wishlistPage.isProductNameAtWishlistDisplayed("product", productName0));
+		assertTrue(wishlistPage.isProductNameDisplayed(driver, "product", productName0));
 
 		ExtentTestManager.getTest().log(Status.INFO, "Wishlist 01 - Step 06: Verify table contains '" + sku + "'");
-		assertTrue(wishlistPage.isProductAtWishlistDisplayed("sku", sku));
+		assertTrue(wishlistPage.isProductDisplayed(driver, "sku", sku));
 
 		ExtentTestManager.getTest().log(Status.INFO, "Wishlist 01 - Step 07: Verify table contains '" + price + "'");
-		assertTrue(wishlistPage.isProductAtWishlistDisplayed("unit-price", price));
+		assertTrue(wishlistPage.isProductDisplayed(driver, "unit-price", price));
 
 		ExtentTestManager.getTest().log(Status.INFO, "Wishlist 01 - Step 08: Click share link");
 		wishlistPage.clickToShareLink();
@@ -212,7 +212,7 @@ public class Nopcommerce_06_Wishlist_Compare_RecentReview extends BaseTest {
 		assertEquals(wishlistPage.getMessageText(), "The wishlist is empty!");
 
 		ExtentTestManager.getTest().log(Status.INFO, "Wishlist 03 - Step 09: Verify table UnDisplayed '" + productName0 + "'");
-		assertTrue(wishlistPage.isProductNameAtWishlistUnDisplayed(productName0));
+		assertTrue(wishlistPage.isProductNameUnDisplayed(driver, productName0));
 	}
 
 	@Test

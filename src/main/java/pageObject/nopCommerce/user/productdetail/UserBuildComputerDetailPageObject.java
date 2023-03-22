@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import commons.PageGeneratorManager;
 import pageObject.nopCommerce.user.UserProductReviewDetailPageObject;
+import pageObject.nopCommerce.user.UserShoppingCartPageObject;
 import pageUIs.nopCommerce.user.BuildComputerPageUI;
 
 public class UserBuildComputerDetailPageObject extends BasePage {
@@ -52,6 +53,11 @@ public class UserBuildComputerDetailPageObject extends BasePage {
 		return getElementText(driver, BuildComputerPageUI.ATTRIBUTES_TEXT);
 	}
 
+	public String getAttributesAtTableDisplayed() {
+		waitForElementVisible(driver, BuildComputerPageUI.ATTRIBUTES_IN_TEXT);
+		return getElementText(driver, BuildComputerPageUI.ATTRIBUTES_IN_TEXT);
+	}
+
 	public String getPraceDisplayed() {
 		waitForElementVisible(driver, BuildComputerPageUI.PRATE_TEXT);
 		return getElementText(driver, BuildComputerPageUI.PRATE_TEXT);
@@ -60,6 +66,23 @@ public class UserBuildComputerDetailPageObject extends BasePage {
 	public String getSubTotalDisplayed() {
 		waitForElementVisible(driver, BuildComputerPageUI.SUB_TOTAL_TEXT);
 		return getElementText(driver, BuildComputerPageUI.SUB_TOTAL_TEXT);
+	}
+
+	public UserShoppingCartPageObject openShoppingCartPage() {
+		waitForElementClickable(driver, BuildComputerPageUI.SHOPPING_CART_ICON);
+		clickToElement(driver, BuildComputerPageUI.SHOPPING_CART_ICON);
+		return PageGeneratorManager.getUserShoppingCartPage(driver);
+
+	}
+
+	public String getProductPraceDisplayed() {
+		waitForElementVisible(driver, BuildComputerPageUI.PRODUCT_PRATE_TEXT);
+		return getElementText(driver, BuildComputerPageUI.PRODUCT_PRATE_TEXT);
+	}
+
+	public boolean isCheckboxSelected() {
+		waitForElementVisible(driver, BuildComputerPageUI.CHECKBOX_TOTAL_COMMANDER);
+		return isElementSelected(driver, BuildComputerPageUI.CHECKBOX_TOTAL_COMMANDER);
 	}
 
 }

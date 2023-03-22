@@ -26,4 +26,9 @@ public class BasePageNopCommerceUI {
 	public static final String LOGOUT_LINK_AT_ADMIN = "XPATH=//a[text()='Logout']";
 	public static final String LOADING_ICON_AT_ADMIN = "XPATH=//div[@id='ajaxBusy']/span";
 
+	public static final String TABLE_HEADER_INDEX_BY_HEADER_CLASS = "//table[@class='cart']//tr//th[@class='%s']//preceding-sibling::th";
+	public static final String TABLE_NAME_VALUE_BY_HEADER_INDEX = "//table[@class='cart']//tbody//tr/*[%s]/a[text()='%s']";
+	public static final String TABLE_ROW_VALUE_BY_HEADER_INDEX = "//table[@class='cart']//tbody//tr/*[%s]//span[text()='%s']";
+	public static final String TABLE_NAME_VALUE_BY_NAME = "//table[@class='cart']//tbody//tr/*[4]/a[text()='%s']";
+
 }

@@ -11,5 +11,8 @@ public class BuildComputerPageUI {
 	public static final String ATTRIBUTES_TEXT = "//div[@class='product']//div[@class='attributes']";
 	public static final String PRATE_TEXT = "//div[@class='product']//div[@class='price']";
 	public static final String SUB_TOTAL_TEXT = "//div[@class='totals']";
+	public static final String PRODUCT_PRATE_TEXT = "//span[text()='$1,320.00']";
+	public static final String ATTRIBUTES_IN_TEXT = "//tbody//tr//div[@class='attributes']";
+	public static final String CHECKBOX_TOTAL_COMMANDER = "//input[@id='product_attribute_5_12']";
 
 }
