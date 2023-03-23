@@ -9,5 +9,6 @@ public class ShoppingCartPageUI {
 	public static final String REMOVE_ICON = "//button[@class='remove-btn']";
 	public static final String MESSAGE_AT_SHOPPING_TEXT = "//div[@class='no-data']";
 	public static final String QTY_TEXTBOX = "//input[@class='qty-input']";
+	public static final String CHECKOUT_BUTTON = "//button[@id='checkout']";
 
 }

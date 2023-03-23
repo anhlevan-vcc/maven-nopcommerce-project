@@ -19,6 +19,7 @@ import pageObject.nopCommerce.user.productdetail.UserSamsungUltrabookDetailPageO
 import pageObject.nopCommerce.user.UserAddressPageObject;
 import pageObject.nopCommerce.user.UserBackInStockSubscriptionsPageObject;
 import pageObject.nopCommerce.user.UserChangePasswordPageObject;
+import pageObject.nopCommerce.user.UserCheckOutPageObject;
 import pageObject.nopCommerce.user.UserCompareProductPageObject;
 import pageObject.nopCommerce.user.UserComputersPageObject;
 import pageObject.nopCommerce.user.UserCustomerInfoPageObject;
@@ -158,5 +159,9 @@ public class PageGeneratorManager {
 
 	public static UserRecentlyViewedProductsPageObject getRecentlyViewedProductsPage(WebDriver driver) {
 		return new UserRecentlyViewedProductsPageObject(driver);
+	}
+
+	public static UserCheckOutPageObject getCheckOutPage(WebDriver driver) {
+		return new UserCheckOutPageObject(driver);
 	}
 }

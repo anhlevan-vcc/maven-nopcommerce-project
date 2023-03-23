@@ -51,4 +51,10 @@ public class UserShoppingCartPageObject extends BasePage {
 		waitForElementVisible(driver, ShoppingCartPageUI.QTY_TEXTBOX);
 		sendkeyToElement(driver, ShoppingCartPageUI.QTY_TEXTBOX, qtyValue);
 	}
+
+	public UserCheckOutPageObject clickToCheckOutButton() {
+		waitForElementClickable(driver, ShoppingCartPageUI.CHECKOUT_BUTTON);
+		clickToElement(driver, ShoppingCartPageUI.CHECKOUT_BUTTON);
+		return PageGeneratorManager.getCheckOutPage(driver);
+	}
 }

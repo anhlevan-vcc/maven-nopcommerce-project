@@ -67,4 +67,21 @@ public class UserData {
 		public static final String UPDATE_PRACE = "$1,320.00";
 		public static final String UPDATE_SUB_TOTAL = "$2,640.00";
 	}
+
+	public static class CheckOut {
+		public static final String FIRST_NAME = "Le";
+		public static final String LAST_NAME = "Anh";
+		public static final String EMAIL = "anhanh@gmail.com";
+		public static final String COMPANY = "VCC";
+		public static final String COUNTRY = "Viet Nam";
+		public static final String STALE = "Other";
+		public static final String CITY = "Ha noi";
+		public static final String ADDRESS1 = "Hồ Chí Minh";
+		public static final String ADDRESS2 = "Huế";
+		public static final String ZIP = "5000000";
+		public static final String PHONE_NUMBER = "03333333333";
+		public static final String FAX = "022222222";
+		public static final String ADDRESS_SHIPPING = "Vũng Tàu";
+		public static final String CITY_SHIPPING = "Đà Nẵng";
+	}
 }
