@@ -82,6 +82,8 @@ public class UserData {
 		public static final String PHONE_NUMBER = "03333333333";
 		public static final String FAX = "022222222";
 		public static final String ADDRESS_SHIPPING = "Vũng Tàu";
-		public static final String CITY_SHIPPING = "Đà Nẵng";
+		public static final String CITY1 = "Đà Nẵng";
+		public static final String COUNTRY1 = "United States";
+		public static final String STALE1 = "Alaska";
 	}
 }

@@ -1,103 +1,11 @@
-1679498762528	geckodriver	INFO	Listening on 127.0.0.1:9333
-1679498763002	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ANHMAI\\AppData\\Local\\Temp\\rust_mozprofilehruLAk"
+1679657195438	geckodriver	INFO	Listening on 127.0.0.1:19752
+1679657195936	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofilee52Sbx"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
-1679498763379	Marionette	INFO	Marionette enabled
+1679657196185	Marionette	INFO	Marionette enabled
 Dynamically enable window occlusion 0
-1679498763385	Marionette	INFO	Listening on port 63515
-Read port: 63515
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ANHMAI\\AppData\\Local\\Temp\\rust_mozprofilehruLAk\\search.json.mozlz4", (void 0)))
+1679657196189	Marionette	INFO	Listening on port 53806
+Read port: 53806
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofilee52Sbx\\search.json.mozlz4", (void 0)))
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demo.nopcommerce.com."
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demo.nopcommerce.com."
-1679498792588	Marionette	INFO	Stopped listening on port 63515
-Dynamically enable window occlusion 1
-WARNING: A blocker encountered an error while we were waiting.
-          Blocker:  Waiting for ping task
-          Phase: TelemetryController: Waiting for pending ping activity
-          State: (none)
-WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
-WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
-setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
-@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
-@resource://gre/modules/osfile.jsm:12:30
-@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
-_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
-setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
-setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
-setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
-observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
-
-WARNING: A blocker encountered an error while we were waiting.
-          Blocker:  Waiting for ping task
-          Phase: TelemetryController: Waiting for pending ping activity
-          State: (none)
-WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
-WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
-setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
-@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
-@resource://gre/modules/osfile.jsm:12:30
-@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
-_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
-setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
-setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
-setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
-observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
-
-WARNING: A blocker encountered an error while we were waiting.
-          Blocker:  Waiting for ping task
-          Phase: TelemetryController: Waiting for pending ping activity
-          State: (none)
-WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
-WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
-setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
-@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
-@resource://gre/modules/osfile.jsm:12:30
-@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
-_checkPendingPings@resource://gre/modules/TelemetrySend.syJavaScript esr.rmojrs:: 8r6e3s:o1u7rc
-es:e/t/ugpr@reesource://gre/m/odulemodules/sAsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to regist/eTre lceommeptlrySend.sys.mjs:803:18
-setup@resource://gre/modules/TelemetrySend.sys.mjse:241:30
-setupTeletmion conditioetryn/ t"hOiSs..F_idleel:a yfelduIsh nI/O queued before profileBeforeChange"
-itJavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, Tlaisk<@nree s7o2urce://7g: Errorre:/ mPohdauslee s"prof/iTelemetryCloen-tbreoflolreer-Pcahraenge" is fnitn.issyhse.dm,j si:t8 2i9s: 3t6oo
- olbasteer vteo@ rreesgoiusrtceer: /c/ogmrpel/emtoidounl ecso/nAdsition "OySncSh.uFtidloew:n .fslyuss.hm jIs/:O5 7q6u:e1u6ed
- b
-eWfAoRrNeI NpGr:o fAi lbelBoecfkoerre Cehnacnoguentered an error while we were waiting.
-          Blocker:  Te"le
-mJeatvraySCcornitprto lerlreor: resource://gre/modules/AsyncShutdro: shutting down
-          Phase: profile-before-change-telemetry
-          State: Errowrn .gseytst.imnjgs ,s tlate: Errionre:  7P2h7a:s eE r"rporofile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queuerd:  bPehfaosree  "pprofile-rbeforeo-fcihlaenBgeef"o riesC fhiannigseh"e d, it isa too late to register completion conditiont addBlocker@reso "OS.Fiurce://le: flush I/O queued before profileBeforeChange"
-JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Errgorre:/ mPohdauslee s"/pArsoyfniclSeh-ubtedfoowrne.-scyhsa.nmgjes": 7i2s7 :f1i5ni
-sahded, it is too lated Btlo regocker@resoisterurce completion condition "OS.File: flush I/O queue://gre/modules/d beAsyforncSe prhutdofiolwn.eBefsysore.mjs:523:Chang26
-ae"ddB
-JavlockeraScr@resource://gre/modules/iptAsync eShutrror:d ownresou.syrce:s.m//gjs:458re/:15modu
-slese/tupSAsyhutdoncShutwn@downres.osuys.mjsr,c el:i/n/eg 72re/7: moduElres/osfrile/osfor:i Phale_async_se front.jsm:1548:28
-@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
-@resource://gre/modules/osfile.jsm:12:30
-@resource:/"/gprreo/fmioldeu-lbeesf/oTreel-ecmheatnrgyeS"t oirs fage.sys.mjs:10:28
-_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
-setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
-setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
-setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
-observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
-
-WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
-WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
-setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
-@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
-@resource://gre/modules/osfile.jsm:12:30
-@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
-_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
-setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
-setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
-setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
-observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
-
-inished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
-JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"

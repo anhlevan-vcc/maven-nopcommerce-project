@@ -31,4 +31,6 @@ public class BasePageNopCommerceUI {
 	public static final String TABLE_ROW_VALUE_BY_HEADER_INDEX = "//table[@class='cart']//tbody//tr/*[%s]//span[text()='%s']";
 	public static final String TABLE_NAME_VALUE_BY_NAME = "//table[@class='cart']//tbody//tr/*[4]/a[text()='%s']";
 
+	public static final String DYNAMIC_INFO_BY_TITLE = "//strong[contains(text(),'%s')]//parent::div//following-sibling::ul//li[@class='%s']";
+
 }

@@ -941,4 +941,8 @@ public class BasePage {
 		return isElementUndisplayed(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_NAME, cellValue);
 	}
 
+	public String getConfirmOrderInfoByTitle(WebDriver driver, String titleText, String infoByClass) {
+		waitForElementVisible(driver, BasePageNopCommerceUI.DYNAMIC_INFO_BY_TITLE, titleText, infoByClass);
+		return getElementText(driver, BasePageNopCommerceUI.DYNAMIC_INFO_BY_TITLE, titleText, infoByClass);
+	}
 }

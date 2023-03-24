@@ -17,4 +17,10 @@ public class UserCheckOutPageObject extends BasePage {
 		return getElementText(driver, CheckOutPageUI.INFO_TEXT);
 	}
 
+	public void clickToButtonContinue(String textValue) {
+		waitForElementVisible(driver, CheckOutPageUI.CONTINUE_BUTTON, textValue);
+		clickToElement(driver, CheckOutPageUI.CONTINUE_BUTTON, textValue);
+	}
+
+
 }

@@ -331,13 +331,13 @@ public class Nopcommerce_07_Order extends BaseTest {
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_Company", UserData.CheckOut.COMPANY);
 
 		logExtentV5("Order_05 - Step 07: Select dropdown country with value is 'Viet Nam'");
-		checkOutPage.selectDropdownByName(driver, "ShippingNewAddress.CountryId", UserData.CheckOut.COUNTRY);
+		checkOutPage.selectDropdownByName(driver, "ShippingNewAddress.CountryId", UserData.CheckOut.COUNTRY1);
 
 		logExtentV5("Order_05 - Step 08: Select dropdown State / province with value is 'Other'");
-		checkOutPage.selectDropdownByName(driver, "ShippingNewAddress.StateProvinceId", UserData.CheckOut.STALE);
+		checkOutPage.selectDropdownByName(driver, "ShippingNewAddress.StateProvinceId", UserData.CheckOut.STALE1);
 
-		logExtentV5("Order_05 - Step 09: Enter to City textbox with value is '" + UserData.CheckOut.CITY_SHIPPING + "'");
-		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_City", UserData.CheckOut.CITY_SHIPPING);
+		logExtentV5("Order_05 - Step 09: Enter to City textbox with value is '" + UserData.CheckOut.CITY1 + "'");
+		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_City", UserData.CheckOut.CITY1);
 
 		logExtentV5("Order_05 - Step 10: Enter to Address 1 textbox with value is '" + UserData.CheckOut.ADDRESS_SHIPPING + "'");
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_Address1", UserData.CheckOut.ADDRESS_SHIPPING);
@@ -355,25 +355,49 @@ public class Nopcommerce_07_Order extends BaseTest {
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_FaxNumber", UserData.CheckOut.FAX);
 
 		logExtentV5("Order_05 - Step 03: ");
-		checkOutPage.clickToButtonByText(driver, "Continue");
+		checkOutPage.clickToButtonContinue("shipping-buttons-container");
 
 		logExtentV5("Order_05 - Step 03: ");
 		checkOutPage.clickToRadioButtonByLabel(driver, "Ground ($0.00)");
 
 		logExtentV5("Order_05 - Step 03: ");
-		checkOutPage.clickToButtonByText(driver, "Continue");
+		checkOutPage.clickToButtonContinue("shipping-method-buttons-container");
 
 		logExtentV5("Order_05 - Step 03: ");
 		checkOutPage.clickToRadioButtonByLabel(driver, "Check / Money Order");
 
 		logExtentV5("Order_05 - Step 03: ");
-		checkOutPage.clickToButtonByText(driver, "Continue");
+		checkOutPage.clickToButtonContinue("payment-method-buttons-container");
 
 		logExtentV5("Order_05 - Step 03: ");
-		assertEquals(checkOutPage.getCheckoutPaymentInfoText(), "NOP SOLUTIONS");
+		assertEquals(checkOutPage.getCheckoutPaymentInfoText(), "NOP SOLUTIONS" + "\nyour address here," + "\nNew York, NY 10001" + "\nUSA");
 
 		logExtentV5("Order_05 - Step 03: ");
-		checkOutPage.clickToButtonByText(driver, "Continue");
+		checkOutPage.clickToButtonContinue("payment-info-buttons-container");
+
+		logExtentV5("Order_05 - Step 03: ");
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "name"), UserData.CheckOut.FIRST_NAME + " " + UserData.CheckOut.LAST_NAME);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "email"), "Email: " + UserData.CheckOut.EMAIL);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "phone"), "Phone: " + UserData.CheckOut.PHONE_NUMBER);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "fax"), "Fax: " + UserData.CheckOut.FAX);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "company"), UserData.CheckOut.COMPANY);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "address1"), UserData.CheckOut.ADDRESS1);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "address2"), UserData.CheckOut.ADDRESS2);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "city-state-zip"),
+				UserData.CheckOut.CITY + "," + UserData.CheckOut.ZIP);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "country"), UserData.CheckOut.COUNTRY);
+
+		logExtentV5("Order_05 - Step 03: ");
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "name"), UserData.CheckOut.FIRST_NAME + " " + UserData.CheckOut.LAST_NAME);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "email"), "Email: " + UserData.CheckOut.EMAIL);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "phone"), "Phone: " + UserData.CheckOut.PHONE_NUMBER);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "fax"), "Fax: " + UserData.CheckOut.FAX);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "company"), UserData.CheckOut.COMPANY);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "address1"), UserData.CheckOut.ADDRESS_SHIPPING);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "address2"), UserData.CheckOut.ADDRESS2);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "city-state-zip"),
+				UserData.CheckOut.CITY1 + "," + UserData.CheckOut.STALE1 + "," + UserData.CheckOut.ZIP);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "country"), UserData.CheckOut.COUNTRY1);
 
 
 	}
@@ -392,9 +416,9 @@ public class Nopcommerce_07_Order extends BaseTest {
 
 	}
 
-	@AfterClass(alwaysRun = true)
-	public void afterClass() {
-		closeBrowserAndDriver();
-	}
+	// @AfterClass(alwaysRun = true)
+	// public void afterClass() {
+	// closeBrowserAndDriver();
+	// }
 
 }
