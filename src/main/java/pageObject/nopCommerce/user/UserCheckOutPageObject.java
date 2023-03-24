@@ -22,5 +22,9 @@ public class UserCheckOutPageObject extends BasePage {
 		clickToElement(driver, CheckOutPageUI.CONTINUE_BUTTON, textValue);
 	}
 
+	public String getOrderSuccessMessage() {
+		waitForElementVisible(driver, CheckOutPageUI.MESSAGE_ORDER_SUCCESS);
+		return getElementText(driver, CheckOutPageUI.MESSAGE_ORDER_SUCCESS);
+	}
 
 }

@@ -383,9 +383,9 @@ public class Nopcommerce_07_Order extends BaseTest {
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "company"), UserData.CheckOut.COMPANY);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "address1"), UserData.CheckOut.ADDRESS1);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "address2"), UserData.CheckOut.ADDRESS2);
-		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "city-state-zip"),
-				UserData.CheckOut.CITY + "," + UserData.CheckOut.ZIP);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "city-state-zip"), UserData.CheckOut.CITY + "," + UserData.CheckOut.ZIP);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "country"), UserData.CheckOut.COUNTRY);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Payment", "payment-method"), "Payment Method: Check / Money Order");
 
 		logExtentV5("Order_05 - Step 03: ");
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "name"), UserData.CheckOut.FIRST_NAME + " " + UserData.CheckOut.LAST_NAME);
@@ -398,8 +398,20 @@ public class Nopcommerce_07_Order extends BaseTest {
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "city-state-zip"),
 				UserData.CheckOut.CITY1 + "," + UserData.CheckOut.STALE1 + "," + UserData.CheckOut.ZIP);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "country"), UserData.CheckOut.COUNTRY1);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping", "shipping-method"), "Shipping Method: Ground");
 
+		logExtentV5("Order_05 - Step 03: ");
+		assertTrue(checkOutPage.isProductNameDisplayed(driver, "product", "Lenovo IdeaCentre 600 All-in-One PC"));
+		assertTrue(checkOutPage.isProductDisplayed(driver, "sku", "LE_IC_600"));
+		assertTrue(checkOutPage.isProductDisplayed(driver, "unit-price", "$500.00"));
+		assertTrue(checkOutPage.isProductDisplayed(driver, "quantity", "5"));
+		assertTrue(checkOutPage.isProductDisplayed(driver, "subtotal", "$2,500.00"));
 
+		logExtentV5("Order_05 - Step 03: ");
+		checkOutPage.clickToButtonByText(driver, "Confirm");
+
+		logExtentV5("Order_05 - Step 03: ");
+		assertEquals(checkOutPage.getOrderSuccessMessage(), "Your order has been successfully processed!");
 	}
 
 	@Test
