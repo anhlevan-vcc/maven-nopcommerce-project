@@ -1,0 +1,12 @@
+[INFO ] [2023-03-25 09:44:16,779] OS name = windows 10
+[INFO ] [2023-03-25 09:44:16,800] Driver instance name = firefoxdriver: firefox on windows (8db791cd-4084-4333-8c69-0829397d9ca1)
+[INFO ] [2023-03-25 09:44:30,220] OS name = windows 10
+[INFO ] [2023-03-25 09:44:30,220] Driver instance name = firefoxdriver: firefox on windows (ac02ae82-5061-45a5-9906-f7c8b2b86be2)
+[INFO ] [2023-03-25 09:45:00,542] OS name = windows 10
+[INFO ] [2023-03-25 09:45:00,542] Driver instance name = firefoxdriver: firefox on windows (5bf44bc4-18fb-4395-aec1-ace5f058632d)
+[INFO ] [2023-03-25 09:45:15,825] OS name = windows 10
+[INFO ] [2023-03-25 09:45:15,980] Driver instance name = firefoxdriver: firefox on windows (3adaf728-ec60-422b-88d4-e81687ce0853)
+[INFO ] [2023-03-25 09:45:52,017] OS name = windows 10
+[INFO ] [2023-03-25 09:45:52,017] Driver instance name = firefoxdriver: firefox on windows (56ff9ca8-55db-41c9-bbbb-206e3fef577d)
+[INFO ] [2023-03-25 09:47:05,335] OS name = windows 10
+[INFO ] [2023-03-25 09:47:05,336] Driver instance name = firefoxdriver: firefox on windows (036ab0ba-f666-4931-bf15-f6296a5f2370)
