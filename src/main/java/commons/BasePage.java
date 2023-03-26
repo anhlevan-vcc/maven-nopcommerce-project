@@ -664,8 +664,8 @@ public class BasePage {
 		// getWebElement(driver, BasePageJQueryUI.BUTTON_UPLOAD_FILE).sendKeys(fullFileName);
 	}
 
-	private long allTime;
-	private long pollingTime;
+	private long allTime = GlobalConstants.getGlobalConstants().getAllTime();
+	private long pollingTime = GlobalConstants.getGlobalConstants().getPollingTime();
 	private long longTimeout = GlobalConstants.getGlobalConstants().getLongTimeout();
 	private long shortTimeout = GlobalConstants.getGlobalConstants().getShortTimeout();
 

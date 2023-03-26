@@ -45,5 +45,7 @@ public class GlobalConstants {
 	private final long longTimeout = 30;
 	private final long shortTimeout = 5;
 	private final long retryTestFail = 3;
+	private final long allTime = 30;
+	private final long pollingTime = 1;
 
 }
