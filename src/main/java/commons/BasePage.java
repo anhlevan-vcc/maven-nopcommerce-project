@@ -194,10 +194,17 @@ public class BasePage {
 		getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).click();
 	}
 
+	/**/
 	protected void sendkeyToElement(WebDriver driver, String locatorType, String textValue) {
-		WebElement element = getWebElement(driver, locatorType);
+		WebElement element = waitForElementVisible1(driver, locatorType);
 		element.clear();
 		element.sendKeys(textValue);
+	}
+
+	/**/
+	protected WebElement waitForElementVisible1(WebDriver driver, String locatorType) {
+		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		return explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locatorType)));
 	}
 
 	protected void sendkeyToElement(WebDriver driver, String locatorType, String textValue, String... dynamicValues) {
@@ -793,6 +800,8 @@ public class BasePage {
 			return PageGeneratorManager.getRecentlyViewedProductsPage(driver);
 		case "Shopping cart":
 			return PageGeneratorManager.getUserShoppingCartPage(driver);
+		case "My account":
+			return PageGeneratorManager.getUserCustomerInfoPage(driver);
 		default:
 			throw new RuntimeException("Invalid page name at My Account area");
 		}
@@ -932,7 +941,9 @@ public class BasePage {
 	}
 
 	public boolean isProductDisplayed(WebDriver driver, String headerColumnClass, String cellValue) {
+		overrideGlobalTimeout(driver, shortTimeout);
 		int columnIndex = getElementSize(driver, BasePageNopCommerceUI.TABLE_HEADER_INDEX_BY_HEADER_CLASS, headerColumnClass) + 1;
+		overrideGlobalTimeout(driver, longTimeout);
 		waitForElementVisible(driver, BasePageNopCommerceUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(columnIndex), cellValue);
 		return isElementDisplayed(driver, BasePageNopCommerceUI.TABLE_ROW_VALUE_BY_HEADER_INDEX, String.valueOf(columnIndex), cellValue);
 	}

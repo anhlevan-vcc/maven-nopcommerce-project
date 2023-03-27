@@ -18,13 +18,36 @@ public class UserCheckOutPageObject extends BasePage {
 	}
 
 	public void clickToButtonContinue(String textValue) {
-		waitForElementVisible(driver, CheckOutPageUI.CONTINUE_BUTTON, textValue);
+		waitForElementClickable(driver, CheckOutPageUI.CONTINUE_BUTTON, textValue);
 		clickToElement(driver, CheckOutPageUI.CONTINUE_BUTTON, textValue);
 	}
 
 	public String getOrderSuccessMessage() {
 		waitForElementVisible(driver, CheckOutPageUI.MESSAGE_ORDER_SUCCESS);
 		return getElementText(driver, CheckOutPageUI.MESSAGE_ORDER_SUCCESS);
+	}
+
+	public String getOrderPageTitle() {
+		waitForElementVisible(driver, CheckOutPageUI.ORDER_PAGE_TITLE);
+		return getElementText(driver, CheckOutPageUI.ORDER_PAGE_TITLE);
+	}
+
+	public boolean isOrderNumberDisplayed() {
+		waitForElementVisible(driver, CheckOutPageUI.ORDER_NUMBER);
+		return isElementDisplayed(driver, CheckOutPageUI.ORDER_NUMBER);
+	}
+
+	public String getOrderNumberText() {
+		waitForElementVisible(driver, CheckOutPageUI.ORDER_NUMBER);
+		return getElementText(driver, CheckOutPageUI.ORDER_NUMBER);
+	}
+
+	public void clickConfirmButton() {
+		scrollToElement(driver, CheckOutPageUI.CONFIRM_BUTTON);
+		highlightElement(driver, CheckOutPageUI.CONFIRM_BUTTON);
+		waitForElementClickable(driver, CheckOutPageUI.CONFIRM_BUTTON);
+		clickToElement(driver, CheckOutPageUI.CONFIRM_BUTTON);
+
 	}
 
 }

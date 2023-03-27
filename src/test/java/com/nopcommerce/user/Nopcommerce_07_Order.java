@@ -20,8 +20,10 @@ import com.nopcommerce.data.UserData;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
 import pageObject.nopCommerce.user.UserCheckOutPageObject;
+import pageObject.nopCommerce.user.UserCustomerInfoPageObject;
 import pageObject.nopCommerce.user.UserHomePageObject;
 import pageObject.nopCommerce.user.UserLoginPageObject;
+import pageObject.nopCommerce.user.UserOrdersPageObject;
 import pageObject.nopCommerce.user.UserShoppingCartPageObject;
 import pageObject.nopCommerce.user.productdetail.UserAllInOneDetailPageObject;
 import pageObject.nopCommerce.user.productdetail.UserBuildComputerDetailPageObject;
@@ -36,8 +38,11 @@ public class Nopcommerce_07_Order extends BaseTest {
 	private UserShoppingCartPageObject shoppingCartPage;
 	private UserAllInOneDetailPageObject allInOneDetailPage;
 	private UserCheckOutPageObject checkOutPage;
+	private UserCustomerInfoPageObject customerInfoPage;
+	private UserOrdersPageObject ordersPage;
 
 	private String validEmail, validPassword;
+	private String orderNumberText;
 	private String updateEmail, updateCompanyName;
 	private String processor, ram, hdd, os, softwareOne, softwareTwo, softwareThree, subTotal, updatePrace, updateProcessor, updateRam, updateHdd, updateOs, updateSubTotal;
 
@@ -264,118 +269,118 @@ public class Nopcommerce_07_Order extends BaseTest {
 	@Test
 	public void Order_05_Pay_By_Cheque_Or_Money(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 01: ");
 		shoppingCartPage.selectDropdownByName(driver, "checkout_attribute_1", "Yes [+$10.00]");
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 02: ");
 		shoppingCartPage.clickToRadioButtonByLabel(driver, "I agree with the terms");
 
 		logExtentV5("Order_05 - Step 03: ");
 		checkOutPage = shoppingCartPage.clickToCheckOutButton();
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 04: ");
 		checkOutPage.unCheckToRadioButtonByLabel(driver, "Ship to the same address");
 
-		logExtentV5("Order_05 - Step 03: Enter to First name textbox with value is + '" + UserData.CheckOut.FIRST_NAME + "'");
+		logExtentV5("Order_05 - Step 05: Enter to First name textbox with value is + '" + UserData.CheckOut.FIRST_NAME + "'");
 		checkOutPage.inputToTextboxByID(driver, "BillingNewAddress_FirstName", UserData.CheckOut.FIRST_NAME);
 
-		logExtentV5("Order_05 - Step 04: Enter to Last name textbox with value is '" + UserData.CheckOut.LAST_NAME + "'");
+		logExtentV5("Order_05 - Step 06: Enter to Last name textbox with value is '" + UserData.CheckOut.LAST_NAME + "'");
 		checkOutPage.inputToTextboxByID(driver, "BillingNewAddress_LastName", UserData.CheckOut.LAST_NAME);
 
-		logExtentV5("Order_05 - Step 05: Enter to Email textbox with value is '" + UserData.CheckOut.EMAIL + "'");
+		logExtentV5("Order_05 - Step 07: Enter to Email textbox with value is '" + UserData.CheckOut.EMAIL + "'");
 		checkOutPage.inputToTextboxByID(driver, "BillingNewAddress_Email", UserData.CheckOut.EMAIL);
 
-		logExtentV5("Order_05 - Step 06: Enter to Company textbox with value is '" + UserData.CheckOut.COMPANY + "'");
+		logExtentV5("Order_05 - Step 08: Enter to Company textbox with value is '" + UserData.CheckOut.COMPANY + "'");
 		checkOutPage.inputToTextboxByID(driver, "BillingNewAddress_Company", UserData.CheckOut.COMPANY);
 
-		logExtentV5("Order_05 - Step 07: Select dropdown country with value is 'Viet Nam'");
+		logExtentV5("Order_05 - Step 09: Select dropdown country with value is 'Viet Nam'");
 		checkOutPage.selectDropdownByName(driver, "BillingNewAddress.CountryId", UserData.CheckOut.COUNTRY);
 
-		logExtentV5("Order_05 - Step 08: Select dropdown State / province with value is 'Other'");
+		logExtentV5("Order_05 - Step 10: Select dropdown State / province with value is 'Other'");
 		checkOutPage.selectDropdownByName(driver, "BillingNewAddress.StateProvinceId", UserData.CheckOut.STALE);
 
-		logExtentV5("Order_05 - Step 09: Enter to City textbox with value is '" + UserData.CheckOut.CITY + "'");
+		logExtentV5("Order_05 - Step 11: Enter to City textbox with value is '" + UserData.CheckOut.CITY + "'");
 		checkOutPage.inputToTextboxByID(driver, "BillingNewAddress_City", UserData.CheckOut.CITY);
 
-		logExtentV5("Order_05 - Step 10: Enter to Address 1 textbox with value is '" + UserData.CheckOut.ADDRESS1 + "'");
+		logExtentV5("Order_05 - Step 12: Enter to Address 1 textbox with value is '" + UserData.CheckOut.ADDRESS1 + "'");
 		checkOutPage.inputToTextboxByID(driver, "BillingNewAddress_Address1", UserData.CheckOut.ADDRESS1);
 
-		logExtentV5("Order_05 - Step 11: Enter to Address 2 textbox with value is '" + UserData.CheckOut.ADDRESS2 + "'");
+		logExtentV5("Order_05 - Step 13: Enter to Address 2 textbox with value is '" + UserData.CheckOut.ADDRESS2 + "'");
 		checkOutPage.inputToTextboxByID(driver, "BillingNewAddress_Address2", UserData.CheckOut.ADDRESS2);
 
-		logExtentV5("Order_05 - Step 12: Enter to Zip / postal code textbox with value is '" + UserData.CheckOut.ZIP + "'");
+		logExtentV5("Order_05 - Step 14: Enter to Zip / postal code textbox with value is '" + UserData.CheckOut.ZIP + "'");
 		checkOutPage.inputToTextboxByID(driver, "BillingNewAddress_ZipPostalCode", UserData.CheckOut.ZIP);
 
-		logExtentV5("Order_05 - Step 13: Enter to Phone number textbox with value is '" + UserData.CheckOut.PHONE_NUMBER + "'");
+		logExtentV5("Order_05 - Step 15: Enter to Phone number textbox with value is '" + UserData.CheckOut.PHONE_NUMBER + "'");
 		checkOutPage.inputToTextboxByID(driver, "BillingNewAddress_PhoneNumber", UserData.CheckOut.PHONE_NUMBER);
 
-		logExtentV5("Order_05 - Step 14: Enter to Fax number textbox with value is '" + UserData.CheckOut.FAX + "'");
+		logExtentV5("Order_05 - Step 16: Enter to Fax number textbox with value is '" + UserData.CheckOut.FAX + "'");
 		checkOutPage.inputToTextboxByID(driver, "BillingNewAddress_FaxNumber", UserData.CheckOut.FAX);
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 17: ");
 		checkOutPage.clickToButtonByText(driver, "Continue");
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 18: ");
 		checkOutPage.selectDropdownByName(driver, "shipping_address_id", "New Address");
 
-		logExtentV5("Order_05 - Step 03: Enter to First name textbox with value is + '" + UserData.CheckOut.FIRST_NAME + "'");
+		logExtentV5("Order_05 - Step 19: Enter to First name textbox with value is + '" + UserData.CheckOut.FIRST_NAME + "'");
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_FirstName", UserData.CheckOut.FIRST_NAME);
 
-		logExtentV5("Order_05 - Step 04: Enter to Last name textbox with value is '" + UserData.CheckOut.LAST_NAME + "'");
+		logExtentV5("Order_05 - Step 20: Enter to Last name textbox with value is '" + UserData.CheckOut.LAST_NAME + "'");
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_LastName", UserData.CheckOut.LAST_NAME);
 
-		logExtentV5("Order_05 - Step 05: Enter to Email textbox with value is '" + UserData.CheckOut.EMAIL + "'");
+		logExtentV5("Order_05 - Step 21: Enter to Email textbox with value is '" + UserData.CheckOut.EMAIL + "'");
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_Email", UserData.CheckOut.EMAIL);
 
-		logExtentV5("Order_05 - Step 06: Enter to Company textbox with value is '" + UserData.CheckOut.COMPANY + "'");
+		logExtentV5("Order_05 - Step 22: Enter to Company textbox with value is '" + UserData.CheckOut.COMPANY + "'");
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_Company", UserData.CheckOut.COMPANY);
 
-		logExtentV5("Order_05 - Step 07: Select dropdown country with value is 'Viet Nam'");
+		logExtentV5("Order_05 - Step 23: Select dropdown country with value is 'Viet Nam'");
 		checkOutPage.selectDropdownByName(driver, "ShippingNewAddress.CountryId", UserData.CheckOut.COUNTRY1);
 
-		logExtentV5("Order_05 - Step 08: Select dropdown State / province with value is 'Other'");
+		logExtentV5("Order_05 - Step 24: Select dropdown State / province with value is 'Other'");
 		checkOutPage.selectDropdownByName(driver, "ShippingNewAddress.StateProvinceId", UserData.CheckOut.STALE1);
 
-		logExtentV5("Order_05 - Step 09: Enter to City textbox with value is '" + UserData.CheckOut.CITY1 + "'");
+		logExtentV5("Order_05 - Step 25: Enter to City textbox with value is '" + UserData.CheckOut.CITY1 + "'");
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_City", UserData.CheckOut.CITY1);
 
-		logExtentV5("Order_05 - Step 10: Enter to Address 1 textbox with value is '" + UserData.CheckOut.ADDRESS_SHIPPING + "'");
+		logExtentV5("Order_05 - Step 26: Enter to Address 1 textbox with value is '" + UserData.CheckOut.ADDRESS_SHIPPING + "'");
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_Address1", UserData.CheckOut.ADDRESS_SHIPPING);
 
-		logExtentV5("Order_05 - Step 11: Enter to Address 2 textbox with value is '" + UserData.CheckOut.ADDRESS2 + "'");
+		logExtentV5("Order_05 - Step 27: Enter to Address 2 textbox with value is '" + UserData.CheckOut.ADDRESS2 + "'");
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_Address2", UserData.CheckOut.ADDRESS2);
 
-		logExtentV5("Order_05 - Step 12: Enter to Zip / postal code textbox with value is '" + UserData.CheckOut.ZIP + "'");
+		logExtentV5("Order_05 - Step 28: Enter to Zip / postal code textbox with value is '" + UserData.CheckOut.ZIP + "'");
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_ZipPostalCode", UserData.CheckOut.ZIP);
 
-		logExtentV5("Order_05 - Step 13: Enter to Phone number textbox with value is '" + UserData.CheckOut.PHONE_NUMBER + "'");
+		logExtentV5("Order_05 - Step 29: Enter to Phone number textbox with value is '" + UserData.CheckOut.PHONE_NUMBER + "'");
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_PhoneNumber", UserData.CheckOut.PHONE_NUMBER);
 
-		logExtentV5("Order_05 - Step 14: Enter to Fax number textbox with value is '" + UserData.CheckOut.FAX + "'");
+		logExtentV5("Order_05 - Step 30: Enter to Fax number textbox with value is '" + UserData.CheckOut.FAX + "'");
 		checkOutPage.inputToTextboxByID(driver, "ShippingNewAddress_FaxNumber", UserData.CheckOut.FAX);
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 31: ");
 		checkOutPage.clickToButtonContinue("shipping-buttons-container");
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 32: ");
 		checkOutPage.clickToRadioButtonByLabel(driver, "Ground ($0.00)");
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 33: ");
 		checkOutPage.clickToButtonContinue("shipping-method-buttons-container");
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 34: ");
 		checkOutPage.clickToRadioButtonByLabel(driver, "Check / Money Order");
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 35: ");
 		checkOutPage.clickToButtonContinue("payment-method-buttons-container");
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 36: ");
 		assertEquals(checkOutPage.getCheckoutPaymentInfoText(), "NOP SOLUTIONS" + "\nyour address here," + "\nNew York, NY 10001" + "\nUSA");
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 37: ");
 		checkOutPage.clickToButtonContinue("payment-info-buttons-container");
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 38: ");
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "name"), UserData.CheckOut.FIRST_NAME + " " + UserData.CheckOut.LAST_NAME);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "email"), "Email: " + UserData.CheckOut.EMAIL);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "phone"), "Phone: " + UserData.CheckOut.PHONE_NUMBER);
@@ -387,7 +392,7 @@ public class Nopcommerce_07_Order extends BaseTest {
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Billing Address", "country"), UserData.CheckOut.COUNTRY);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Payment", "payment-method"), "Payment Method: Check / Money Order");
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 39: ");
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "name"), UserData.CheckOut.FIRST_NAME + " " + UserData.CheckOut.LAST_NAME);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "email"), "Email: " + UserData.CheckOut.EMAIL);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "phone"), "Phone: " + UserData.CheckOut.PHONE_NUMBER);
@@ -400,18 +405,43 @@ public class Nopcommerce_07_Order extends BaseTest {
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "country"), UserData.CheckOut.COUNTRY1);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping", "shipping-method"), "Shipping Method: Ground");
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 401: ");
 		assertTrue(checkOutPage.isProductNameDisplayed(driver, "product", "Lenovo IdeaCentre 600 All-in-One PC"));
+
+		logExtentV5("Order_05 - Step 402: ");
 		assertTrue(checkOutPage.isProductDisplayed(driver, "sku", "LE_IC_600"));
+
+		logExtentV5("Order_05 - Step 403: ");
 		assertTrue(checkOutPage.isProductDisplayed(driver, "unit-price", "$500.00"));
+
+		logExtentV5("Order_05 - Step 404: ");
 		assertTrue(checkOutPage.isProductDisplayed(driver, "quantity", "5"));
+
+		logExtentV5("Order_05 - Step 405: ");
 		assertTrue(checkOutPage.isProductDisplayed(driver, "subtotal", "$2,500.00"));
 
-		logExtentV5("Order_05 - Step 03: ");
-		checkOutPage.clickToButtonByText(driver, "Confirm");
+		logExtentV5("Order_05 - Step 41: ");
+		checkOutPage.clickConfirmButton();
 
-		logExtentV5("Order_05 - Step 03: ");
+		logExtentV5("Order_05 - Step 42: ");
+		assertEquals(checkOutPage.getOrderPageTitle(), "Thank you");
 		assertEquals(checkOutPage.getOrderSuccessMessage(), "Your order has been successfully processed!");
+		assertTrue(checkOutPage.isOrderNumberDisplayed());
+
+		logExtentV5("Order_05 - Step 43: ");
+		orderNumberText = checkOutPage.getOrderNumberText();
+
+		logExtentV5("Order_05 - Step 44: ");
+		customerInfoPage = (UserCustomerInfoPageObject) checkOutPage.openPageAtHomeFooterByName(driver, "My account");
+
+		logExtentV5("Order_05 - Step 45: ");
+		ordersPage = (UserOrdersPageObject) customerInfoPage.openPageAtMyAccountByName(driver, "Orders");
+
+		logExtentV5("Order_05 - Step 46: ");
+		assertEquals(ordersPage.getOrderNumberTextAtOrderPage(), orderNumberText);
+
+		logExtentV5("Order_05 - Step 47: ");
+
 	}
 
 	@Test
