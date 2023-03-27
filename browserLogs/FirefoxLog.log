@@ -1,12 +1,17 @@
-1679908379325	geckodriver	INFO	Listening on 127.0.0.1:27511
-1679908379796	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofilerIw43S"
+1679930270782	geckodriver	INFO	Listening on 127.0.0.1:3179
+1679930271447	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ANHMAI\\AppData\\Local\\Temp\\rust_mozprofileXuvohK"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
-1679908380042	Marionette	INFO	Marionette enabled
+1679930272277	Marionette	INFO	Marionette enabled
 Dynamically enable window occlusion 0
-1679908380046	Marionette	INFO	Listening on port 59704
-Read port: 59704
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofilerIw43S\\search.json.mozlz4", (void 0)))
-console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demo.nopcommerce.com."
-console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demo.nopcommerce.com."
-JavaScript error: https://demo.nopcommerce.com/js/ugb2rim6qtxni-qfi-iama.scripts.js?v=IhJEl_-QC2MC4IKAv2wqLUVRXT0, line 23: TypeError: this.localized_data is undefined
+1679930272284	Marionette	INFO	Listening on port 52451
+Read port: 52451
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ANHMAI\\AppData\\Local\\Temp\\rust_mozprofileXuvohK\\search.json.mozlz4", (void 0)))
+JavaScript warning: https://demo.nopcommerce.com/cdn-cgi/challenge-platform/h/b/orchestrate/managed/v1?ray=7ae89a5a3e811949 line 1 > Function, line 3: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/orchestrate/chl_api/v1?ray=7ae89a6edc3107ad line 1 > Function, line 3: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.jsm", 603))
+JavaScript warning: https://demo.nopcommerce.com/cdn-cgi/challenge-platform/h/b/orchestrate/managed/v1?ray=7ae89ae1fdc52495 line 1 > Function, line 3: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://demo.nopcommerce.com/cdn-cgi/challenge-platform/h/b/orchestrate/managed/v1?ray=7ae89af0ae512495 line 1 > Function, line 3: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/orchestrate/chl_api/v1?ray=7ae89aff39c907ad line 1 > Function, line 3: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
