@@ -42,7 +42,7 @@ public class Nopcommerce_07_Order extends BaseTest {
 	private UserOrdersPageObject ordersPage;
 
 	private String validEmail, validPassword;
-	private String orderNumberText;
+	private String orderNumberText, orderDate;
 	private String updateEmail, updateCompanyName;
 	private String processor, ram, hdd, os, softwareOne, softwareTwo, softwareThree, subTotal, updatePrace, updateProcessor, updateRam, updateHdd, updateOs, updateSubTotal;
 
@@ -439,6 +439,11 @@ public class Nopcommerce_07_Order extends BaseTest {
 
 		logExtentV5("Order_05 - Step 46: ");
 		assertEquals(ordersPage.getOrderNumberTextAtOrderPage(), orderNumberText);
+
+		orderDate = checkOutPage.getCurentDate();
+
+		logExtentV5("Order_05 - Step 47: ");
+		ordersPage.clickToButtonByText(driver, "Details");
 
 		logExtentV5("Order_05 - Step 47: ");
 

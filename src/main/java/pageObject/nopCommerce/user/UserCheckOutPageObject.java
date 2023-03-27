@@ -1,5 +1,9 @@
 package pageObject.nopCommerce.user;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
@@ -48,6 +52,23 @@ public class UserCheckOutPageObject extends BasePage {
 		waitForElementClickable(driver, CheckOutPageUI.CONFIRM_BUTTON);
 		clickToElement(driver, CheckOutPageUI.CONFIRM_BUTTON);
 
+	}
+
+	public String getCurentDate() {
+		waitForElementVisible(driver, CheckOutPageUI.ORDER_DATE);
+		getElementText(driver, CheckOutPageUI.ORDER_DATE);
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		Date currentDate = null;
+		try {
+			currentDate = dateFormat.parse(getElementText(driver, CheckOutPageUI.ORDER_DATE));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		SimpleDateFormat newDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		String newDateText = newDateFormat.format(currentDate);
+		System.out.println("Ngày tháng hiện tại là: " + newDateText);
+		return newDateText;
 	}
 
 }
