@@ -8,6 +8,5 @@ public class CheckOutPageUI {
 	public static final String ORDER_PAGE_TITLE = "//h1[text()='Thank you']";
 	public static final String ORDER_NUMBER = "//div[@class='order-number']";
 	public static final String CONFIRM_BUTTON = "//button[contains(@class,'confirm-order-next-step-button')]";
-	public static final String ORDER_DATE = "//span[@class='order-date']";
 
 }

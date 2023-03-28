@@ -36,7 +36,6 @@ import pageObject.nopCommerce.user.UserMyProductReviewPageObject;
 import pageObject.nopCommerce.user.UserOrdersPageObject;
 import pageObject.nopCommerce.user.UserRewardPointPageObject;
 import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
-import pageUIs.nopCommerce.user.WishlistPageUI;
 
 public class BasePage {
 
@@ -873,6 +872,7 @@ public class BasePage {
 	 * @param itemValue
 	 */
 	public void selectDropdownByName(WebDriver driver, String dropdownAttributeName, String itemValue) {
+		waitForElementVisible(driver, BasePageNopCommerceUI.DYNAMIC_DROPDOWN_BY_NAME, dropdownAttributeName);
 		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_DROPDOWN_BY_NAME, dropdownAttributeName);
 		selectItemInDefaulfDropdown(driver, BasePageNopCommerceUI.DYNAMIC_DROPDOWN_BY_NAME, itemValue, dropdownAttributeName);
 	}

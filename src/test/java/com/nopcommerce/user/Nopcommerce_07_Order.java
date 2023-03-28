@@ -440,12 +440,13 @@ public class Nopcommerce_07_Order extends BaseTest {
 		logExtentV5("Order_05 - Step 46: ");
 		assertEquals(ordersPage.getOrderNumberTextAtOrderPage(), orderNumberText);
 
-		orderDate = checkOutPage.getCurentDate();
+		orderDate = ordersPage.getCurentDate();
 
 		logExtentV5("Order_05 - Step 47: ");
 		ordersPage.clickToButtonByText(driver, "Details");
 
 		logExtentV5("Order_05 - Step 47: ");
+		assertEquals(ordersPage.getOrderDate(), orderDate);
 
 	}
 
