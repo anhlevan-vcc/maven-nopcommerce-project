@@ -3,6 +3,7 @@ package commons;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -559,5 +560,10 @@ public class BaseTest {
 
 	protected String getCurentDate() {
 		return getCurrentDay() + "/" + getCurrentMonth() + "/" + getCurrentYear();
+	}
+
+	public String getTimeStamp() {
+		Date date = new Date();
+		return date.toString();
 	}
 }

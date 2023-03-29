@@ -47,7 +47,29 @@ public class UserCheckOutPageObject extends BasePage {
 		highlightElement(driver, CheckOutPageUI.CONFIRM_BUTTON);
 		waitForElementClickable(driver, CheckOutPageUI.CONFIRM_BUTTON);
 		clickToElement(driver, CheckOutPageUI.CONFIRM_BUTTON);
-
 	}
+
+	public void clickButtonUntilNoAlertIsDisplayed() {
+		scrollToElement(driver, CheckOutPageUI.CONFIRM_BUTTON);
+		highlightElement(driver, CheckOutPageUI.CONFIRM_BUTTON);
+		boolean isAlertDisplayed = true;
+		while (isAlertDisplayed) {
+			waitForElementClickable(driver, CheckOutPageUI.CONFIRM_BUTTON);
+			sleepInSecond(4);
+			clickToElement(driver, CheckOutPageUI.CONFIRM_BUTTON);
+			try {
+				waitForAlertPresence(driver);
+				acceptAlert(driver);
+			} catch (Exception e) {
+				isAlertDisplayed = false;
+			}
+		}
+	}
+
+	public void clickAcceptAlert() {
+		waitForAlertPresence(driver);
+		acceptAlert(driver);
+	}
+
 
 }

@@ -83,7 +83,35 @@ public class UserData {
 		public static final String FAX = "022222222";
 		public static final String ADDRESS_SHIPPING = "Vũng Tàu";
 		public static final String CITY1 = "Đà Nẵng";
-		public static final String COUNTRY1 = "United States";
-		public static final String STALE1 = "Alaska";
+		public static final String COUNTRY1 = "Andorra";
+		public static final String STALE1 = "Other";
+	}
+
+	public static class ReOrder {
+		public static final String FIRST_NAME = "LeReOrder";
+		public static final String LAST_NAME = "AnhReOrder";
+		public static final String EMAIL = "anhanhReOrder@gmail.com";
+		public static final String COMPANY = "VCCReOrder";
+		public static final String COUNTRY = "Viet Nam";
+		public static final String STALE = "Other";
+		public static final String CITY = "Ha noi";
+		public static final String ADDRESS1 = "Hồ Chí Minh";
+		public static final String ADDRESS2 = "Huế";
+		public static final String ZIP = "6000000";
+		public static final String PHONE_NUMBER = "03655554545";
+		public static final String FAX = "02020202";
+		public static final String ADDRESS_SHIPPING = "Vũng Tàu";
+		public static final String CITY1 = "Đà Nẵng";
+		public static final String COUNTRY1 = "Algeria";
+		public static final String STALE1 = "Other";
+	}
+
+	public static class PaymentInformation {
+		public static final String CREDIT_CARD= "Master card";
+		public static final String CARD_NAME = "Demarcus Huel";
+		public static final String CARD_NUMBER = "5396881205108156";
+		public static final String MONTH_NUMBER = "08";
+		public static final String YEAR_NUMBER = "2027";
+		public static final String CARD_CODE = "120";
 	}
 }

@@ -8,6 +8,7 @@ import java.util.Locale;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.PageGeneratorManager;
 import pageUIs.nopCommerce.user.OrderPageUI;
 
 public class UserOrdersPageObject extends BasePage {
@@ -41,6 +42,11 @@ public class UserOrdersPageObject extends BasePage {
 	public String getOrderDate() {
 		waitForElementVisible(driver, OrderPageUI.ORDER_DATE_DETAIL);
 		return getElementText(driver, OrderPageUI.ORDER_DATE_DETAIL).substring(12);
+	}
+
+	public UserShoppingCartPageObject clickToButtonReOrder(String valueText) {
+		clickToButtonByText(driver, valueText);
+		return PageGeneratorManager.getUserShoppingCartPage(driver);
 	}
 
 }

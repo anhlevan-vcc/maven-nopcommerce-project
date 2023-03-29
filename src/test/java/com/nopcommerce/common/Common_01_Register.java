@@ -41,37 +41,37 @@ public class Common_01_Register extends BaseTest {
 		month = UserData.Rigester.MONTH;
 		year = UserData.Rigester.YEAR;
 
-		log.info("Pre-condition - Step 01: Navigate to 'Register' page");
+		// log.info("Pre-condition - Step 01: Navigate to 'Register' page");
 		registerPage = homePage.openRegisterPage();
 
-		log.info("Pre-condition - Step 02: Enter to First name textbox with value is '" + firstName + "'");
+		// log.info("Pre-condition - Step 02: Enter to First name textbox with value is '" + firstName + "'");
 		registerPage.inputToFirstnameTextbox(firstName);
 
-		log.info("Pre-condition - Step 03: Enter to Last name textbox with value is '" + lastName + "'");
+		// log.info("Pre-condition - Step 03: Enter to Last name textbox with value is '" + lastName + "'");
 		registerPage.inputToLastnameTextbox(lastName);
 
-		log.info("Pre-condition - Step 04: Select dropdown Date Of Birth Day '" + day + "'");
+		// log.info("Pre-condition - Step 04: Select dropdown Date Of Birth Day '" + day + "'");
 		registerPage.selectDropdownDay(day);
 
-		log.info("Pre-condition - Step 05: Select dropdown Date Of Birth month '" + month + "'");
+		// log.info("Pre-condition - Step 05: Select dropdown Date Of Birth month '" + month + "'");
 		registerPage.selectDropdownMonth(month);
 
-		log.info("Pre-condition - Step 06: Select dropdown Date Of Birth year '" + year + "'");
+		// log.info("Pre-condition - Step 06: Select dropdown Date Of Birth year '" + year + "'");
 		registerPage.selectDropdownYear(year);
 
-		log.info("Pre-condition - Step 07: Enter to email textbox with value is '" + email + "'");
+		// log.info("Pre-condition - Step 07: Enter to email textbox with value is '" + email + "'");
 		registerPage.inputToEmailTextbox(email);
 
-		log.info("Pre-condition - Step 08: Enter to password textbox with value is '" + password + "'");
+		// log.info("Pre-condition - Step 08: Enter to password textbox with value is '" + password + "'");
 		registerPage.inputToPasswordTextbox(password);
 
-		log.info("Pre-condition - Step 09: Enter to confirm password textbox with value is '" + password + "'");
+		// log.info("Pre-condition - Step 09: Enter to confirm password textbox with value is '" + password + "'");
 		registerPage.inputToConfirmPasswordTextbox(password);
 
-		log.info("Pre-condition - Step 10: Click to Register button");
+		// log.info("Pre-condition - Step 10: Click to Register button");
 		registerPage.clickToRegisterButton();
 
-		log.info("Pre-condition - Step 11: Verify register success message is displayed");
+		// log.info("Pre-condition - Step 11: Verify register success message is displayed");
 		assertEquals(registerPage.getMessageSuccess(), "Your registration completed");
 
 		driver.quit();
