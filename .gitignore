@@ -1,2 +1,5 @@
 /target/
 /test-output/
+/extentV5/
+/scriptLogs/
+/browserLogs/

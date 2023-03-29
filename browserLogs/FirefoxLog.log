@@ -1,14 +1,13 @@
-1680087538591	geckodriver	INFO	Listening on 127.0.0.1:12302
-1680087539093	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofilefME54a"
+1680110462879	geckodriver	INFO	Listening on 127.0.0.1:6422
+1680110463372	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ANHMAI\\AppData\\Local\\Temp\\rust_mozprofileo8ee2J"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
-1680087539360	Marionette	INFO	Marionette enabled
+1680110463741	Marionette	INFO	Marionette enabled
 Dynamically enable window occlusion 0
-1680087539364	Marionette	INFO	Listening on port 51468
-Read port: 51468
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofilefME54a\\search.json.mozlz4", (void 0)))
+1680110463746	Marionette	INFO	Listening on port 52672
+Read port: 52672
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ANHMAI\\AppData\\Local\\Temp\\rust_mozprofileo8ee2J\\search.json.mozlz4", (void 0)))
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demo.nopcommerce.com."
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://demo.nopcommerce.com."
-JavaScript error: https://demo.nopcommerce.com/js/ugb2rim6qtxni-qfi-iama.scripts.js?v=IhJEl_-QC2MC4IKAv2wqLUVRXT0, line 23: TypeError: this.localized_data is undefined
-1680087636087	Marionette	INFO	Stopped listening on port 51468
+1680110569465	Marionette	INFO	Stopped listening on port 52672
 Dynamically enable window occlusion 1
