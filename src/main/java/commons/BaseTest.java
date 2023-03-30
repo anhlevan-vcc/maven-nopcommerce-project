@@ -382,7 +382,7 @@ public class BaseTest {
 			envUrl = "https://demo.nopcommerce.com/";
 			break;
 		case TESTING:
-			envUrl = "https://test.demo.nopcommerce.com/";
+			envUrl = "https://admin-demo.nopcommerce.com/";
 			break;
 		case STAGING:
 			envUrl = "https://staging.demo.nopcommerce.com/";

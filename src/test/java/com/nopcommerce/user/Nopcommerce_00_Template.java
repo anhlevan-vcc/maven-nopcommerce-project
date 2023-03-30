@@ -51,18 +51,18 @@ public class Nopcommerce_00_Template extends BaseTest {
 
 	@Test(enabled = false)
 	public void User_01_Register(Method method) {
-		ExtentTestManager.startTest(method.getName() + " - " + this.browser, method.getName());
-		ExtentTestManager.getTest().log(Status.INFO, "");
+		logStartTest(method.getName() + " - " + this.browser, method.getName());
+		logExtentV5("Admin_01 - Step 01: ");
 
 	}
 
 	@Test(enabled = false)
-	public void User_02_Login() {
+	public void User_02_Login(Method method) {
 
 	}
 
 	@Test(enabled = false)
-	public void User_03_My_Account() {
+	public void User_03_My_Account(Method method) {
 	}
 
 	@AfterClass(alwaysRun = true)

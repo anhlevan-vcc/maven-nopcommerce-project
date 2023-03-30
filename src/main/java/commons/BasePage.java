@@ -827,6 +827,19 @@ public class BasePage {
 		}
 	}
 
+	public BasePage openPageAtDashboardByName(WebDriver driver, String pageName) {
+		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_ADMIN_DASHBOARD_PAGE, pageName);
+		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_ADMIN_DASHBOARD_PAGE, pageName);
+		switch (pageName) {
+		case "Catalog":
+			return PageGeneratorManager.getAdminCatalogPage(driver);
+		case "Products":
+			return PageGeneratorManager.getAdminProductsPage(driver);
+		default:
+			throw new RuntimeException("Invalid page name at My Account area");
+		}
+	}
+
 	// tối ưu ở bài LV8
 	public UserHomePageObject clickToLogoutLinkAtUserPage(WebDriver driver) {
 		waitForElementClickable(driver, BasePageNopCommerceUI.LOGOUT_LINK_AT_USER);

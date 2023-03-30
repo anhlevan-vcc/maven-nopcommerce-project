@@ -34,4 +34,6 @@ public class BasePageNopCommerceUI {
 	public static final String DYNAMIC_INFO_BY_TITLE = "//strong[contains(text(),'%s')]//parent::div//following-sibling::ul//li[@class='%s']";
 	public static final String ICON_LOADING = "//span[@id='states-loading-progress']";
 
+	public static final String DYNAMIC_ADMIN_DASHBOARD_PAGE = "//p[normalize-space()='%s']";
+
 }
