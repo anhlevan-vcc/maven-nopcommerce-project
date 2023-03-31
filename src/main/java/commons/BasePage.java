@@ -840,6 +840,10 @@ public class BasePage {
 		}
 	}
 
+	public void waitIconLoadingInvisible(WebDriver driver) {
+		waitForElementInvisible(driver, BasePageNopCommerceUI.LOADING_ICON_AT_ADMIN);
+	}
+
 	// tối ưu ở bài LV8
 	public UserHomePageObject clickToLogoutLinkAtUserPage(WebDriver driver) {
 		waitForElementClickable(driver, BasePageNopCommerceUI.LOGOUT_LINK_AT_USER);
@@ -866,8 +870,20 @@ public class BasePage {
 		sendkeyToElement(driver, BasePageNopCommerceUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
 	}
 
+	public void inputToTextboxByIDAdmin(WebDriver driver, String textboxID, String value) {
+		waitIconLoadingInvisible(driver);
+		waitForElementVisible(driver, BasePageNopCommerceUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		sendkeyToElement(driver, BasePageNopCommerceUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
+	}
+
+	public boolean isProductInfoDisplayedInTableAdmin(WebDriver driver, String headerColumnText, String cellValue) {
+		int columnIndex = getElementSize(driver, BasePageNopCommerceUI.TABLE_HEADER_INDEX_BY_HEADER_TEXT, headerColumnText) + 1;
+		waitForElementVisible(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex), cellValue);
+		return isElementDisplayed(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex), cellValue);
+	}
+
 	/**
-	 * Click to dynamic Button by Text
+	 * Click to dynamic Button by Text dùng contains(text(),'')
 	 * 
 	 * @param driver
 	 * @param buttonText
@@ -875,6 +891,17 @@ public class BasePage {
 	public void clickToButtonByText(WebDriver driver, String buttonText) {
 		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
 		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+	}
+
+	/**
+	 * Click to dynamic Button by ID
+	 * 
+	 * @param driver
+	 * @param buttonText
+	 */
+	public void clickToButtonByID(WebDriver driver, String buttonID) {
+		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_ID, buttonID);
+		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_ID, buttonID);
 	}
 
 	/**

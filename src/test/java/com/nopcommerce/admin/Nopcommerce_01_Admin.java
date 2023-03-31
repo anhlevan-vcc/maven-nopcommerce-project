@@ -1,5 +1,6 @@
 package com.nopcommerce.admin;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.lang.reflect.Method;
@@ -55,12 +56,37 @@ public class Nopcommerce_01_Admin extends BaseTest {
 		logExtentV5("Admin_01 - Step 01: ");
 		adminProductsPage = (AdminProductsPageObject) adminCatalogPage.openPageAtDashboardByName(driver, "Products");
 
+		logExtentV5("Admin_01 - Step 01: ");
+		adminProductsPage.inputToTextboxByIDAdmin(driver, "SearchProductName", AdminData.ProductPage.PRODUCT_NAME);
+
+		logExtentV5("Admin_01 - Step 01: ");
+		adminProductsPage.clickToButtonByID(driver, "search-products");
+
+		logExtentV5("Admin_01 - Step 01: ");
+		assertEquals(adminProductsPage.getProductSize(), 1);
+		assertTrue(adminProductsPage.isProductInfoDisplayedInTableAdmin(driver, "Product name", AdminData.ProductPage.PRODUCT_NAME));
+		assertTrue(adminProductsPage.isProductInfoDisplayedInTableAdmin(driver, "SKU", AdminData.ProductPage.SKU));
+		assertTrue(adminProductsPage.isProductInfoDisplayedInTableAdmin(driver, "Price", AdminData.ProductPage.PRICE));
+		assertTrue(adminProductsPage.isProductInfoDisplayedInTableAdmin(driver, "Stock quantity", AdminData.ProductPage.QUANTITY));
 	}
 
 	@Test()
-	public void Admin_02_Login(Method method) {
+	public void Admin_02_Search(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
+		logExtentV5("Admin_02 - Step 01: ");
+		adminProductsPage.inputToTextboxByIDAdmin(driver, "SearchProductName", AdminData.ProductPage.PRODUCT_NAME);
+
+		logExtentV5("Admin_02 - Step 01: ");
+		adminProductsPage.selectDropdownByName(driver, "SearchCategoryId", "Computers");
+
+		logExtentV5("Admin_02 - Step 01: ");
+		adminProductsPage.unCheckToRadioButton();
+
 		logExtentV5("Admin_01 - Step 01: ");
+		adminProductsPage.clickToButtonByID(driver, "search-products");
+
+		logExtentV5("Admin_01 - Step 01: ");
+		assertEquals(adminProductsPage.getDataTableEmpty(), "No data available in table");
 
 	}
 

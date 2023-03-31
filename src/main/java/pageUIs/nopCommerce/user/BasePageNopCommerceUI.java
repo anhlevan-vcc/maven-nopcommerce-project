@@ -35,5 +35,8 @@ public class BasePageNopCommerceUI {
 	public static final String ICON_LOADING = "//span[@id='states-loading-progress']";
 
 	public static final String DYNAMIC_ADMIN_DASHBOARD_PAGE = "//p[normalize-space()='%s']";
+	public static final String DYNAMIC_BUTTON_BY_ID = "//button[@id='%s']";
+	public static final String TABLE_HEADER_INDEX_BY_HEADER_TEXT = "//th[contains(text(),'%s')]//preceding-sibling::th";
+	public static final String TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN = "//tbody/tr/td[%s][text()='%s']";
 
 }
