@@ -8,6 +8,7 @@ public class BasePageNopCommerceUI {
 	public static final String DYNAMIC_DROPDOWN_BY_NAME = "//select[@name='%s']";
 	public static final String DYNAMIC_RADIOBUTTON_BY_LABEL = "//label[contains(text(),'%s')]/preceding-sibling::input";
 	public static final String DYNAMIC_CHECKBOX_BY_LABEL = "//label[contains(text(),'%s')]/following-sibling::input";
+	public static final String DYNAMIC_CHECKBOX_BY_LABEL_ADMIN = "//label[contains(text(),'%s')]/preceding-sibling::input";
 	public static final String DYNAMIC_DESKTOPS_PRODUCT_PAGE = "//div[@class='product-grid']//a[text()='%s']";
 	public static final String DYNAMIC_CATEGORIES_COMPUTER_PAGE = "//ul[@class='list']//a[text()='%s']";
 	public static final String DYNAMIC_HOME_MENU_PAGE = "//ul[@class='top-menu notmobile']//a[contains(string(),'%s')]";
@@ -38,5 +39,7 @@ public class BasePageNopCommerceUI {
 	public static final String DYNAMIC_BUTTON_BY_ID = "//button[@id='%s']";
 	public static final String TABLE_HEADER_INDEX_BY_HEADER_TEXT = "//th[contains(text(),'%s')]//preceding-sibling::th";
 	public static final String TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN = "//tbody/tr/td[%s][text()='%s']";
+	public static final String DYNAMIC_ADMIN_CUSTOMER_PAGE = "//a[@href='#']//p[contains(text(),'%s')]";
+	public static final String DYNAMIC_ADMIN_CUSTOMER_CHILD_PAGE = "//a[@href='/Admin/Customer/List']//p[contains(text(),'%s')]";
 
 }

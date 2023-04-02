@@ -23,6 +23,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeMethod;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -38,6 +39,17 @@ import reportConfig.ExtentTestManager;
 public class BaseTest {
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	protected final Log log;
+	private int stepCount = 00;
+
+	@BeforeMethod
+	public void beforeMethod() {
+		stepCount = 00;
+	}
+
+	public int step() {
+		stepCount++;
+		return stepCount;
+	}
 
 	protected BaseTest() {
 		log = LogFactory.getLog(getClass());
@@ -402,7 +414,7 @@ public class BaseTest {
 		return envUrl;
 	}
 
-	protected int generateRandomNumber() {
+	public static int generateRandomNumber() {
 		Random rand = new Random();
 		return rand.nextInt(9999);
 	}

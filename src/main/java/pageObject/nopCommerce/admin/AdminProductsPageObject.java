@@ -12,10 +12,10 @@ public class AdminProductsPageObject extends BasePage {
 		this.driver = driver;
 	}
 
-	public int getProductSize() {
+	public int getProductSize(String productName) {
 		waitIconLoadingInvisible(driver);
-		waitForElementVisible(driver, AdminProductsPageUI.PRODUCT_NAME);
-		return getElementSize(driver, AdminProductsPageUI.PRODUCT_NAME);
+		waitForElementVisible(driver, AdminProductsPageUI.PRODUCT_NAME, productName);
+		return getElementSize(driver, AdminProductsPageUI.PRODUCT_NAME, productName);
 	}
 
 	public void unCheckToRadioButton() {
@@ -27,6 +27,26 @@ public class AdminProductsPageObject extends BasePage {
 	public String getDataTableEmpty() {
 		waitForElementVisible(driver, AdminProductsPageUI.MESSAGE_DATA_EMPTY);
 		return getElementText(driver, AdminProductsPageUI.MESSAGE_DATA_EMPTY);
+	}
+
+	public void checkToRadioButton() {
+		waitIconLoadingInvisible(driver);
+		waitForElementClickable(driver, AdminProductsPageUI.SUBCATEGORY_CHECKBOX);
+		checkToDefaultCheckboxRadio(driver, AdminProductsPageUI.SUBCATEGORY_CHECKBOX);
+
+	}
+
+	public String getProductNameisDisplayed() {
+		waitIconLoadingInvisible(driver);
+		waitForElementVisible(driver, AdminProductsPageUI.PRODUCT_NAME_TITLE_DETAIL);
+		return getElementText(driver, AdminProductsPageUI.PRODUCT_NAME_TITLE_DETAIL).substring(23).substring(0,
+				getElementText(driver, AdminProductsPageUI.PRODUCT_NAME_TITLE_DETAIL).substring(23).length() - 21);
+	}
+
+	public String getAttributeValue(String value) {
+		waitIconLoadingInvisible(driver);
+		waitForElementVisible(driver, AdminProductsPageUI.PRODUCT_NAME_ATTRIBUTE);
+		return getElementAttribute(driver, AdminProductsPageUI.PRODUCT_NAME_ATTRIBUTE, value);
 	}
 
 }

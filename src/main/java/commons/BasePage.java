@@ -268,6 +268,34 @@ public class BasePage {
 		}
 	}
 
+	protected void selectItemInCustomDropdownDisplayed(WebDriver driver, String perenLocator, String childLocator, String expectedTextItem) {
+		getWebElement(driver, perenLocator).click();
+		sleepInSecond(1);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		List<WebElement> allItems = explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(childLocator)));
+		for (WebElement itemSample : allItems) {
+			String AcctualItem = itemSample.getText();
+			if (AcctualItem.equals(expectedTextItem)) {
+				itemSample.click();
+				break;
+			}
+		}
+	}
+
+	protected void editItemInCustomDropdown(WebDriver driver, String perenLocator, String childLocator, String expectedEditItem) {
+		getWebElement(driver, perenLocator).sendKeys(expectedEditItem);
+		sleepInSecond(1);
+		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+		List<WebElement> allItems = explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(childLocator)));
+		for (WebElement itemSample : allItems) {
+			String AcctualItem = itemSample.getText();
+			if (AcctualItem.equals(expectedEditItem)) {
+				itemSample.click();
+				break;
+			}
+		}
+	}
+
 	public void sleepInSecond(long timeInSecond) {
 		try {
 			Thread.sleep(timeInSecond * 1000);
@@ -840,6 +868,30 @@ public class BasePage {
 		}
 	}
 
+	public BasePage openPageCustomersByName(WebDriver driver, String pageName) {
+		waitIconLoadingInvisible(driver);
+		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_ADMIN_CUSTOMER_PAGE, pageName);
+		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_ADMIN_CUSTOMER_PAGE, pageName);
+		switch (pageName) {
+		case "Customers":
+			return PageGeneratorManager.getAdminCustomersPage(driver);
+		default:
+			throw new RuntimeException("Invalid page name at My Account area");
+		}
+	}
+
+	public BasePage openPageCustomerChildByName(WebDriver driver, String pageName) {
+		waitIconLoadingInvisible(driver);
+		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_ADMIN_CUSTOMER_CHILD_PAGE, pageName);
+		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_ADMIN_CUSTOMER_CHILD_PAGE, pageName);
+		switch (pageName) {
+		case "Customers":
+			return PageGeneratorManager.getAdminCustomerChildPage(driver);
+		default:
+			throw new RuntimeException("Invalid page name at My Account area");
+		}
+	}
+
 	public void waitIconLoadingInvisible(WebDriver driver) {
 		waitForElementInvisible(driver, BasePageNopCommerceUI.LOADING_ICON_AT_ADMIN);
 	}
@@ -899,7 +951,8 @@ public class BasePage {
 	 * @param driver
 	 * @param buttonText
 	 */
-	public void clickToButtonByID(WebDriver driver, String buttonID) {
+	public void clickToButtonByIDAdmin(WebDriver driver, String buttonID) {
+		waitIconLoadingInvisible(driver);
 		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_ID, buttonID);
 		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_ID, buttonID);
 	}
@@ -958,6 +1011,11 @@ public class BasePage {
 	public void clickToCheckboxByLabel(WebDriver driver, String checkboxLabelName) {
 		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, checkboxLabelName);
 		checkToDefaultCheckboxOrRadio(driver, BasePageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, checkboxLabelName);
+	}
+
+	public void clickToCheckboxByLabelAdmin(WebDriver driver, String checkboxLabelName) {
+		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL_ADMIN, checkboxLabelName);
+		checkToDefaultCheckboxOrRadio(driver, BasePageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL_ADMIN, checkboxLabelName);
 	}
 
 	/**
