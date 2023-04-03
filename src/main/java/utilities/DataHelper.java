@@ -6,7 +6,7 @@ import com.github.javafaker.Faker;
 
 public class DataHelper {
 	// Ngôn ngữ Vi
-	private Locale local = new Locale("en");
+	private Locale local = new Locale("vi");
 	private Faker faker = new Faker(local);
 
 	// Hàm khởi tạo qua testcase chỉ việc gọi ra
@@ -36,6 +36,10 @@ public class DataHelper {
 
 	public String getAddress() {
 		return faker.address().streetAddress();
+	}
+
+	public String companyName() {
+		return faker.company().name();
 	}
 
 	public String getPassword() {

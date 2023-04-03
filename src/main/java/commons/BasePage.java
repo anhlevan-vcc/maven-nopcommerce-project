@@ -863,21 +863,17 @@ public class BasePage {
 			return PageGeneratorManager.getAdminCatalogPage(driver);
 		case "Products":
 			return PageGeneratorManager.getAdminProductsPage(driver);
+		case "Dashboard":
+			return PageGeneratorManager.getAdminDashboardPage(driver);
 		default:
 			throw new RuntimeException("Invalid page name at My Account area");
 		}
 	}
 
-	public BasePage openPageCustomersByName(WebDriver driver, String pageName) {
+	public void showFolderTreeByTextAdmin(WebDriver driver, String folderText) {
 		waitIconLoadingInvisible(driver);
-		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_ADMIN_CUSTOMER_PAGE, pageName);
-		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_ADMIN_CUSTOMER_PAGE, pageName);
-		switch (pageName) {
-		case "Customers":
-			return PageGeneratorManager.getAdminCustomersPage(driver);
-		default:
-			throw new RuntimeException("Invalid page name at My Account area");
-		}
+		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_ADMIN_ICON_SHOW_FOLDER, folderText);
+		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_ADMIN_ICON_SHOW_FOLDER, folderText);
 	}
 
 	public BasePage openPageCustomerChildByName(WebDriver driver, String pageName) {
@@ -894,6 +890,10 @@ public class BasePage {
 
 	public void waitIconLoadingInvisible(WebDriver driver) {
 		waitForElementInvisible(driver, BasePageNopCommerceUI.LOADING_ICON_AT_ADMIN);
+	}
+
+	public void waitIconLoadingVisible(WebDriver driver) {
+		waitForElementVisible(driver, BasePageNopCommerceUI.LOADING_ICON_AT_ADMIN);
 	}
 
 	// tối ưu ở bài LV8
