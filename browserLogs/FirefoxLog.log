@@ -1,15 +1,15 @@
-1680520748250	geckodriver	INFO	Listening on 127.0.0.1:28340
-1680520748874	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofile2Ts4Ve"
+1680540412249	geckodriver	INFO	Listening on 127.0.0.1:19487
+1680540412919	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ANHMAI\\AppData\\Local\\Temp\\rust_mozprofileAlhPxV"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
-1680520749144	Marionette	INFO	Marionette enabled
+1680540413301	Marionette	INFO	Marionette enabled
 Dynamically enable window occlusion 0
-1680520749148	Marionette	INFO	Listening on port 58718
-Read port: 58718
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofile2Ts4Ve\\search.json.mozlz4", (void 0)))
+1680540413306	Marionette	INFO	Listening on port 61583
+Read port: 61583
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ANHMAI\\AppData\\Local\\Temp\\rust_mozprofileAlhPxV\\search.json.mozlz4", (void 0)))
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://admin-demo.nopcommerce.com."
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://admin-demo.nopcommerce.com."
-1680520762897	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+1680540429904	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
 TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
 TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
 interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
@@ -21,113 +21,21 @@ k/t[r]@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v
 t@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:104:849
 initOnce@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:104:1251
 init@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:105:637
-@https://admin-demo.nopcommerce.com/Admin/Customer/Edit/269:2574:46
+@https://admin-demo.nopcommerce.com/Admin/Customer/Edit/144:2574:46
 e@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30038
 Deferred/then/l/</t<@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30340
-1680520797247	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+1680540496877	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
 TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
 TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
 interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
 webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
 send@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:82714
 ajax@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:78291
-@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:96:4933
-k/t[r]@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:96:977
-t@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:104:849
-initOnce@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:104:1251
-init@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:105:637
-@https://admin-demo.nopcommerce.com/Admin/Customer/List:1472:46
+@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:95:4933
+k/t[r]@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:95:977
+t@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:103:849
+initOnce@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:103:1251
+init@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:104:637
+@https://admin-demo.nopcommerce.com/Admin/Customer/AddressEdit?addressId=23&customerId=144:1321:46
 e@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30038
 Deferred/then/l/</t<@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30340
-1680520802059	Marionette	INFO	Stopped listening on port 58718
-Dynamically enable window occlusion 1
-WARNING: A blocker encountered an error while we were waiting.
-          Blocker:  Waiting for ping task
-          Phase: TelemetryController: Waiting for pending ping activity
-          State: (none)
-WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
-WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
-setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
-@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
-@resource://gre/modules/osfile.jsm:12:30
-@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
-_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
-setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
-setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
-setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
-observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
-
-WARNING: A blocker encountered an error while we were waiting.
-          Blocker:  Waiting for ping task
-          Phase: TelemetryController: Waiting for pending ping activity
-          State: (none)
-WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
-WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
-setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
-@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
-@resource://gre/modules/osfile.jsm:12:30
-@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
-_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
-setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
-setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
-setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
-observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
-
-WARNING: A blocker encountered an error while we were waiting.
-          Blocker:  Waiting for ping task
-          Phase: TelemetryController: Waiting for pending ping activity
-          State: (none)
-WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
-WARNING: addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:727:15
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
-setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
-@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
-@resource://gre/modules/osfile.jsm:12:30
-@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
-_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
-setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
-setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
-setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
-observe@resource://gre/modules/AsyncShJavaScutdown.sys.mjs:5r76:1i6
-p
-WARNINtG: A error:  blorcker encountereed asn error while we were waiting.
-o      u    rBlocker:  TelemetrcyController: shuetting do://gre/modules/AsyncShutdown.sys.mjs, wn
-          Phlase: profile-before-changei-telemnetrye
-           7Stat2e: Error getting state: Err7or: Ph: Error: Phasease "profi le-befo"re-change" is finished, it is too late to regpirofile-befster ore-change" is finishcompletion coed, it isndition "OS.File too : flulatesh I/O que to rued before profileBeforeChange" eagister cot addBlocmker@repletisourceo:/n con/gre/moduldes/Asition "OS.yncShutdown.sysFile: .mjs:727flush I/O queued before profileBeforeCha:15
-addBnlocker@rge"
-esourJavaScript ece://rror: resource://gre/modules/AsyncShutdown.sygre/modules/Ass.mjs, yncShutdown.sys.lmjs:52ine 727: Error: Phase3:26
-a "profile-ddBlocker@rbesource://gre/emodules/AsyncSfore-hutcdown.sys.mjs:458:15
-setuhpShutdange" is finishown@resourced, ite://gre/modu is toles/osfile/osfo late toile_async_front.jsm:1548 register c:28
-@resoompleturce://gre/mion coduleondition "OS.Files/osfi: flush lI/O queued be/osfile_asyncefore profileBeforeC_front.jsm:hange"
-JavaS1568:16cript 
-@reserror: ourceresource://gre/://gremodules/modu/AsyncSles/ohutdown.syssfile.jsm:1.mjs,2:30
-@resour lince e:/7/gre/modules/Tel27: EremetryStror: Phase "profilorage.sys.e-befomjs:10:28
-_re-chcheckPendingPings@resource:a//gre/nge" is finished, it is too mlate oduleto registes/Telemr completion condition "OS.File: flush I/O queued before profileBeforeChange"
-JavaScript error: resource://gre/modules/AsyncShutdown.sysetrySend.sys.mjs:863:17
-setup@resource://gre/m.odulemjs, s/TellemetrySine 7end.27: Ersys.mjs:8ror: Pha03:18
-setup@resource://gre/modules/Telemese "protrySend.sys.mjs:241:30
-setupTelemetfry/this._delayedile-before-chaInitTnge" is finishask<ed, it is too late to regis@resourter completion conditiocn "Oe://grS.File: flush I/O qeueued before pro/filmoduleeBefsor/eTelChange"
-JavaScript error: resource://gere/modules/metrAsyncShutdownyControllerPa.sys.mjs, line 727: Errrent.sys.mjs:829or::36 Phase 
-observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
-
-WARNING: Error: Phase "profile-before-change" "is finished, it is too lprofile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
-JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 727: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.Fate to register completion coile: flush I/O queuedndi before profitionleBeforeChange "OS.File: flush I/O queued before profileBeforeChange"
-WARNING: addBlocker@resource://gre/modules/AsyncShutdow"
-n.sys.mjs:727:15
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:523:26
-addBlocker@resource://gre/modules/AsyncShutdown.sys.mjs:458:15
-setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1548:28
-@resource://gre/modules/osfile/osfile_async_front.jsm:1568:16
-@resource://gre/modules/osfile.jsm:12:30
-@resource://gre/modules/TelemetryStorage.sys.mjs:10:28
-_checkPendingPings@resource://gre/modules/TelemetrySend.sys.mjs:863:17
-setup@resource://gre/modules/TelemetrySend.sys.mjs:803:18
-setup@resource://gre/modules/TelemetrySend.sys.mjs:241:30
-setupTelemetry/this._delayedInitTask<@resource://gre/modules/TelemetryControllerParent.sys.mjs:829:36
-observe@resource://gre/modules/AsyncShutdown.sys.mjs:576:16
-

@@ -358,79 +358,180 @@ public class Nopcommerce_01_Admin extends BaseTest {
 	@Test()
 	public void Admin_12_Edit_Customer(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomersChildCreatePage = adminCustomerChildPage.clickButtonEditAtTable();
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Email", AdminData.CustomerEditInfo.EMAIL);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Password", AdminData.CustomerEditInfo.PASSWORD);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "FirstName", AdminData.CustomerEditInfo.FIRST_NAME);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "LastName", AdminData.CustomerEditInfo.LAST_NAME);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomersChildCreatePage.clickToCheckboxByLabelAdmin(driver, AdminData.CustomerEditInfo.GENDER);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "DateOfBirth", AdminData.CustomerEditInfo.DATE_OF_BIRTH);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Company", AdminData.CustomerEditInfo.COMPANY);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomersChildCreatePage.inputToTextaraComment(AdminData.CustomerEditInfo.ADMIN_COMMENT);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomerChildPage = adminCustomersChildCreatePage.clickToButtonSave();
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		assertEquals(adminCustomerChildPage.getMessageSuccessEdit(), AdminData.CustomerEditInfo.MESSAGE_SUCCESS);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
-		adminCustomerChildPage.clickToIconClose();
-
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchEmail", AdminData.CustomerEditInfo.EMAIL);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchFirstName", AdminData.CustomerEditInfo.FIRST_NAME);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchLastName", AdminData.CustomerEditInfo.LAST_NAME);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomerChildPage.selectDropdownByName(driver, "SearchDayOfBirth", AdminData.CustomerEditInfo.DAY);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomerChildPage.selectDropdownByName(driver, "SearchMonthOfBirth", AdminData.CustomerEditInfo.MONTH);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchCompany", AdminData.CustomerEditInfo.COMPANY);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomerChildPage.unSelectDropdownRoles(AdminData.CustomerEditInfo.CUSTOMER_ROLES_RESGISTER);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomerChildPage.selectDropdownRoles(AdminData.CustomerEditInfo.CUSTOMER_ROLES);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": ");
 		adminCustomerChildPage.clickToButtonByIDAdmin(driver, "search-customers");
 
-		logExtentV5("Admin_11 - Step " + step() + ": Verify customer info in table");
+		logExtentV5("Admin_12 - Step " + step() + ": Verify customer info in table");
 		assertEquals(adminCustomerChildPage.getProductSize(AdminData.CustomerEditInfo.FIRST_NAME + " " + AdminData.CustomerEditInfo.LAST_NAME), 1);
 		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAdmin(driver, "Name", AdminData.CustomerEditInfo.FIRST_NAME + " " + AdminData.CustomerEditInfo.LAST_NAME));
 		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAdmin(driver, "Company name", AdminData.CustomerEditInfo.COMPANY));
 	}
 
-	@AfterClass(alwaysRun = true)
-	public void afterClass() {
-		closeBrowserAndDriver();
+	@Test()
+	public void Admin_13_Add_New_Address(Method method) {
+		logStartTest(method.getName() + " - " + this.browser, method.getName());
+		logExtentV5("Admin_11 - Step " + step() + ": ");
+		adminCustomerChildPage.refreshCurrentPage(driver);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchEmail", AdminData.CustomerEditInfo.EMAIL);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchFirstName", AdminData.CustomerEditInfo.FIRST_NAME);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchLastName", AdminData.CustomerEditInfo.LAST_NAME);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomerChildPage.selectDropdownByName(driver, "SearchDayOfBirth", AdminData.CustomerEditInfo.DAY);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomerChildPage.selectDropdownByName(driver, "SearchMonthOfBirth", AdminData.CustomerEditInfo.MONTH);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchCompany", AdminData.CustomerEditInfo.COMPANY);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomerChildPage.unSelectDropdownRoles(AdminData.CustomerEditInfo.CUSTOMER_ROLES_RESGISTER);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomerChildPage.selectDropdownRoles(AdminData.CustomerEditInfo.CUSTOMER_ROLES);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomerChildPage.clickToButtonByIDAdmin(driver, "search-customers");
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage = adminCustomerChildPage.clickButtonEditAtTable();
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.openCartTitleAtCustomerEditByText(driver, "Customer info");
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.openCartTitleAtCustomerEditByText(driver, "Addresses");
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.clickToAddNewAddressButton();
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_FirstName", AdminData.AddNewAddress.FIRST_NAME);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_LastName", AdminData.AddNewAddress.LAST_NAME);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Email", AdminData.AddNewAddress.EMAIL);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Company", AdminData.AddNewAddress.COMPANY);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.selectDropdownByName(driver, "Address.CountryId", AdminData.AddNewAddress.COUNTRY);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.selectDropdownByName(driver, "Address.StateProvinceId", AdminData.AddNewAddress.STALE);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_City", AdminData.AddNewAddress.CITY);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Address1", AdminData.AddNewAddress.ADD1);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Address2", AdminData.AddNewAddress.ADD2);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_ZipPostalCode", AdminData.AddNewAddress.ZIP);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_PhoneNumber", AdminData.AddNewAddress.PHONE_NUMBER);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_FaxNumber", AdminData.AddNewAddress.FAX_NUMBER);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomersChildCreatePage.clickToButtonByNormalizeSpace(driver, "Save");
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		assertEquals(adminCustomerChildPage.getMessageSuccessAddress(), AdminData.AddNewAddress.MESSAGE_SUCCESS);
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomerChildPage.clickToIconClose();
+
+		logExtentV5("Admin_12 - Step " + step() + ": ");
+		adminCustomerChildPage.clickBackCustomerDetailLink();
+
+		logExtentV5("Admin_12 - Step " + step() + ": Verify customer info in table");
+		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "First name", AdminData.AddNewAddress.FIRST_NAME));
+		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Last name", AdminData.AddNewAddress.LAST_NAME));
+		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Email", AdminData.AddNewAddress.EMAIL));
+		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Phone number", AdminData.AddNewAddress.PHONE_NUMBER));
+		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Fax number", AdminData.AddNewAddress.FAX_NUMBER));
+		assertEquals(adminCustomerChildPage.getAddressInTable("Address"), AdminData.AddNewAddress.COMPANY + "\n" + AdminData.AddNewAddress.ADD1 + "\n"
+				+ AdminData.AddNewAddress.ADD2 + "\n" + AdminData.AddNewAddress.CITY + "," + AdminData.AddNewAddress.ZIP + "\n" + AdminData.AddNewAddress.COUNTRY);
+
 	}
+
+	// @AfterClass(alwaysRun = true)
+	// public void afterClass() {
+	// closeBrowserAndDriver();
+	// }
 
 	private AdminDashboardPageObject adminDashboardPage;
 	private AdminLoginPageObject adminLoginPage;

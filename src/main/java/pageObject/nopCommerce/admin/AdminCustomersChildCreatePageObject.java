@@ -64,6 +64,11 @@ public class AdminCustomersChildCreatePageObject extends BasePage {
 		return PageGeneratorManager.getAdminCustomerChildPage(driver);
 	}
 
-
+	public void clickToAddNewAddressButton() {
+		waitIconLoadingInvisible(driver);
+		scrollToElement(driver, AdminCustomerChildCreatePageUI.ADD_NEW_ADDRESS_BUTTON);
+		waitForElementClickable(driver, AdminCustomerChildCreatePageUI.ADD_NEW_ADDRESS_BUTTON);
+		clickToElement(driver, AdminCustomerChildCreatePageUI.ADD_NEW_ADDRESS_BUTTON);
+	}
 
 }

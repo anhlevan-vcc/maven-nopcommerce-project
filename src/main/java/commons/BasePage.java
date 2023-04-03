@@ -35,6 +35,7 @@ import pageObject.nopCommerce.user.UserHomePageObject;
 import pageObject.nopCommerce.user.UserMyProductReviewPageObject;
 import pageObject.nopCommerce.user.UserOrdersPageObject;
 import pageObject.nopCommerce.user.UserRewardPointPageObject;
+import pageUIs.nopCommerce.admin.AdminCustomerChildCreatePageUI;
 import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
 
 public class BasePage {
@@ -934,6 +935,14 @@ public class BasePage {
 		return isElementDisplayed(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex), cellValue);
 	}
 
+	public boolean isProductInfoDisplayedInTableAddressAdmin(WebDriver driver, String headerColumnText, String cellValue) {
+		overrideGlobalTimeout(driver, shortTimeout);
+		int columnIndex = getElementSize(driver, BasePageNopCommerceUI.TABLE_HEADER_INDEX_BY_HEADER_TEXT, headerColumnText) + 1;
+		overrideGlobalTimeout(driver, longTimeout);
+		waitForElementVisible(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex), cellValue);
+		return isElementDisplayed(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex), cellValue);
+	}
+
 	/**
 	 * Click to dynamic Button by Text dùng contains(text(),'')
 	 * 
@@ -946,6 +955,17 @@ public class BasePage {
 	}
 
 	/**
+	 * Click to dynamic Button by Text dùng Normalize-space(),'')
+	 * 
+	 * @param driver
+	 * @param buttonText
+	 */
+	public void clickToButtonByNormalizeSpace(WebDriver driver, String buttonText) {
+		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_NORMAL, buttonText);
+		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_NORMAL, buttonText);
+	}
+
+	/**
 	 * Click to dynamic Button by ID
 	 * 
 	 * @param driver
@@ -955,6 +975,12 @@ public class BasePage {
 		waitIconLoadingInvisible(driver);
 		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_ID, buttonID);
 		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_BUTTON_BY_ID, buttonID);
+	}
+
+	public void openCartTitleAtCustomerEditByText(WebDriver driver, String titleText) {
+		waitIconLoadingInvisible(driver);
+		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_TITLE_BY_TEXT, titleText);
+		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_TITLE_BY_TEXT, titleText);
 	}
 
 	/**

@@ -53,4 +53,22 @@ public class AdminData extends BaseTest {
 		public static final String CUSTOMER_ROLES_RESGISTER = "Registered";
 		public static final String MESSAGE_SUCCESS = "The customer has been updated successfully.";
 	}
+
+	public static class AddNewAddress {
+		public static final String FIRST_NAME = faker.name().firstName();
+		public static final String LAST_NAME = faker.name().lastName();
+		public static final String EMAIL = faker.internet().emailAddress();
+		public static final String COMPANY = faker.company().name();
+		public static final String COUNTRY = "Viet Nam";
+		public static final String STALE = "Other";
+		public static final String CITY = faker.address().city();
+		public static final String ADD1 = faker.address().fullAddress();
+		public static final String ADD2 = faker.address().fullAddress();
+		public static final String ZIP = faker.address().zipCode();
+		public static final String PHONE_NUMBER = faker.phoneNumber().phoneNumber();
+		public static final String FAX_NUMBER = faker.phoneNumber().phoneNumber();
+		public static final String MESSAGE_SUCCESS = "The new address has been added successfully.";
+		public static final String ADDRESS_IN_TABLE = "Kuvalis-MacGyver" + "\nApt. 206 5074 Flatley Trail, East Brendon, CA 28049-8604"
+				+ "\n4313 Welch Walk, Meaganhaven, VT 57481-1967" + "\nWest Eliaside,48555" + "\nViet Nam";
+	}
 }

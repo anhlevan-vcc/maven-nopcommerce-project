@@ -6,6 +6,7 @@ import commons.BasePage;
 import commons.PageGeneratorManager;
 import pageUIs.nopCommerce.admin.AdminCustomerChildCreatePageUI;
 import pageUIs.nopCommerce.admin.AdminCustomerChildPageUI;
+import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
 
 public class AdminCustomerChildPageObject extends BasePage {
 	private WebDriver driver;
@@ -60,5 +61,27 @@ public class AdminCustomerChildPageObject extends BasePage {
 	public void clickToIconClose() {
 		waitForElementClickable(driver, AdminCustomerChildPageUI.CLOSE_ICON);
 		clickToElement(driver, AdminCustomerChildPageUI.CLOSE_ICON);
+	}
+
+	public String getMessageSuccessAddress() {
+		waitForElementVisible(driver, AdminCustomerChildPageUI.MESSAGE_SUCCSEE_TEXT);
+		String successMessage = getElementText(driver, AdminCustomerChildPageUI.MESSAGE_SUCCSEE_TEXT);
+		int startIndex = successMessage.indexOf("The new address has been added successfully.");
+		if (startIndex >= 0) {
+			String customerName = successMessage.substring(startIndex);
+			return customerName;
+		}
+		return successMessage;
+	}
+
+	public void clickBackCustomerDetailLink() {
+		waitForElementClickable(driver, AdminCustomerChildPageUI.BACK_CUSTOMER_DETAIL_LINK);
+		clickToElement(driver, AdminCustomerChildPageUI.BACK_CUSTOMER_DETAIL_LINK);
+	}
+
+	public String getAddressInTable(String headerColumnText) {
+		int columnIndex = getElementSize(driver, AdminCustomerChildPageUI.TABLE_HEADER_INDEX_BY_HEADER_TEXT, headerColumnText) + 1;
+		waitForElementVisible(driver, AdminCustomerChildPageUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex));
+		return getElementText(driver, AdminCustomerChildPageUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex));
 	}
 }

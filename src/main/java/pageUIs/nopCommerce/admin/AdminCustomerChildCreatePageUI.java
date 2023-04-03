@@ -10,6 +10,6 @@ public class AdminCustomerChildCreatePageUI {
 	public static final String BACK_TO_CUSTOMER_LINK = "//a[normalize-space()='back to customer list']";
 	public static final String CLOSE_ICON = "//button[contains(text(),'×')]";
 	public static final String SAVE_BUTTON = "//button[@name='save']";
-
+	public static final String ADD_NEW_ADDRESS_BUTTON = "//button[normalize-space()='Add new address']";
 
 }

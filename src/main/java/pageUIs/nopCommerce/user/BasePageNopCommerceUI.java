@@ -41,5 +41,7 @@ public class BasePageNopCommerceUI {
 	public static final String TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN = "//tbody/tr/td[%s][text()='%s']";
 	public static final String DYNAMIC_ADMIN_CUSTOMER_CHILD_PAGE = "//a[@href='/Admin/Customer/List']//p[contains(text(),'%s')]";
 	public static final String DYNAMIC_ADMIN_ICON_SHOW_FOLDER = "//p[normalize-space()='%s']//i[contains(@class,'right fas fa-angle-left')]";
+	public static final String DYNAMIC_TITLE_BY_TEXT = "//div[contains(text(),'%s')]";
+	public static final String DYNAMIC_BUTTON_BY_NORMAL = "//button[normalize-space()='%s']";
 
 }
