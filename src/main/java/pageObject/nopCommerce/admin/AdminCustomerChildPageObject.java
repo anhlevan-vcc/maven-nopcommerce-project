@@ -4,9 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import commons.PageGeneratorManager;
-import pageUIs.nopCommerce.admin.AdminCustomerChildCreatePageUI;
 import pageUIs.nopCommerce.admin.AdminCustomerChildPageUI;
-import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
 
 public class AdminCustomerChildPageObject extends BasePage {
 	private WebDriver driver;
@@ -74,6 +72,17 @@ public class AdminCustomerChildPageObject extends BasePage {
 		return successMessage;
 	}
 
+	public String getMessageSuccessEditAddress() {
+		waitForElementVisible(driver, AdminCustomerChildPageUI.MESSAGE_SUCCSEE_TEXT);
+		String successMessage = getElementText(driver, AdminCustomerChildPageUI.MESSAGE_SUCCSEE_TEXT);
+		int startIndex = successMessage.indexOf("The address has been updated successfully.");
+		if (startIndex >= 0) {
+			String customerName = successMessage.substring(startIndex);
+			return customerName;
+		}
+		return successMessage;
+	}
+
 	public void clickBackCustomerDetailLink() {
 		waitForElementClickable(driver, AdminCustomerChildPageUI.BACK_CUSTOMER_DETAIL_LINK);
 		clickToElement(driver, AdminCustomerChildPageUI.BACK_CUSTOMER_DETAIL_LINK);
@@ -83,5 +92,26 @@ public class AdminCustomerChildPageObject extends BasePage {
 		int columnIndex = getElementSize(driver, AdminCustomerChildPageUI.TABLE_HEADER_INDEX_BY_HEADER_TEXT, headerColumnText) + 1;
 		waitForElementVisible(driver, AdminCustomerChildPageUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex));
 		return getElementText(driver, AdminCustomerChildPageUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex));
+	}
+
+	public void clickToButtonEditInTableAddress() {
+		waitForElementClickable(driver, AdminCustomerChildPageUI.EDIT_BTN_TABLE_ADDRESS);
+		clickToElement(driver, AdminCustomerChildPageUI.EDIT_BTN_TABLE_ADDRESS);
+	}
+
+	public void clickToButtonDeleteInTableAddress() {
+		waitForElementClickable(driver, AdminCustomerChildPageUI.DEL_BTN_TABLE_ADDRESS);
+		clickToElement(driver, AdminCustomerChildPageUI.DEL_BTN_TABLE_ADDRESS);
+	}
+
+	public String getMessageDeleteSuccess() {
+		sleepInSecond(2);
+		waitForElementVisible(driver, AdminCustomerChildPageUI.MESSAGE_DEL_SUCCSEE_TEXT);
+		return getElementText(driver, AdminCustomerChildPageUI.MESSAGE_DEL_SUCCSEE_TEXT);
+	}
+
+	public void accessAlertDelete() {
+		waitForAlertPresence(driver);
+		acceptAlert(driver);
 	}
 }

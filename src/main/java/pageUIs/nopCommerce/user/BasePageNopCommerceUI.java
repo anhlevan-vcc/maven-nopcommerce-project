@@ -43,5 +43,6 @@ public class BasePageNopCommerceUI {
 	public static final String DYNAMIC_ADMIN_ICON_SHOW_FOLDER = "//p[normalize-space()='%s']//i[contains(@class,'right fas fa-angle-left')]";
 	public static final String DYNAMIC_TITLE_BY_TEXT = "//div[contains(text(),'%s')]";
 	public static final String DYNAMIC_BUTTON_BY_NORMAL = "//button[normalize-space()='%s']";
+	public static final String ICON_MINUS = "//div[contains(text(),'%s')]//following-sibling::div//i[contains(@class,'fa-minus')]";
 
 }

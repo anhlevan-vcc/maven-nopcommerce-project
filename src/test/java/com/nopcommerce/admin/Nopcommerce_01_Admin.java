@@ -45,7 +45,7 @@ public class Nopcommerce_01_Admin extends BaseTest {
 
 	}
 
-	// @Test()
+	@Test()
 	public void Admin_01_Search_Product_Name(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
 		logExtentV5("Admin_01 - Step " + step() + ": Open Catalog page");
@@ -68,7 +68,7 @@ public class Nopcommerce_01_Admin extends BaseTest {
 		assertTrue(adminProductsPage.isProductInfoDisplayedInTableAdmin(driver, "Stock quantity", AdminData.ProductPage.QUANTITY));
 	}
 
-	// @Test()
+	@Test()
 	public void Admin_02_Search_Product_Name(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
 		logExtentV5("Admin_02 - Step " + step() + ": Input to Product name textbox with value is '" + AdminData.ProductPage.PRODUCT_NAME + "'");
@@ -88,7 +88,7 @@ public class Nopcommerce_01_Admin extends BaseTest {
 
 	}
 
-	// @Test()
+	@Test()
 	public void Admin_03_Search_Product_Name(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
 		logExtentV5("Admin_03 - Step " + step() + ": Input to Product name textbox with value is '" + AdminData.ProductPage.PRODUCT_NAME + "'");
@@ -107,7 +107,7 @@ public class Nopcommerce_01_Admin extends BaseTest {
 		assertEquals(adminProductsPage.getProductSize(AdminData.ProductPage.PRODUCT_NAME), 1);
 	}
 
-	// @Test()
+	@Test()
 	public void Admin_04_Search_Product_Name(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
 		logExtentV5("Admin_04 - Step " + step() + ": Input to Product name textbox with value is '" + AdminData.ProductPage.PRODUCT_NAME + "'");
@@ -126,7 +126,7 @@ public class Nopcommerce_01_Admin extends BaseTest {
 		assertEquals(adminProductsPage.getProductSize(AdminData.ProductPage.PRODUCT_NAME), 1);
 	}
 
-	// @Test()
+	@Test()
 	public void Admin_05_Search_Product_Name(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
 		logExtentV5("Admin_05 - Step " + step() + ": Input to Product name textbox with value is '" + AdminData.ProductPage.PRODUCT_NAME + "'");
@@ -148,7 +148,7 @@ public class Nopcommerce_01_Admin extends BaseTest {
 		assertEquals(adminProductsPage.getDataTableEmpty(), "No data available in table");
 	}
 
-	// @Test()
+	@Test()
 	public void Admin_06_Go_Directly_To_Product_SKU(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
 		logExtentV5("Admin_06 - Step " + step() + ": Input to Go directly to product SKU");
@@ -165,7 +165,7 @@ public class Nopcommerce_01_Admin extends BaseTest {
 	}
 
 	@Test()
-	public void Admin_07_Go_Directly_To_Product_SKU(Method method) {
+	public void Admin_07_Creat_New_Customer(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
 		logExtentV5("Admin_07 - Step " + step() + ": Show tree folder Customers");
 		adminDashboardPage.showFolderTreeByTextAdmin(driver, "Customers");
@@ -175,6 +175,12 @@ public class Nopcommerce_01_Admin extends BaseTest {
 
 		logExtentV5("Admin_07 - Step " + step() + ": Click to button 'Add new'");
 		adminCustomersChildCreatePage = adminCustomerChildPage.clickToButtonAddNew();
+
+		logExtentV5("Admin_07 - Step " + step() + ": Verify page ready");
+		assertTrue(adminCustomersChildCreatePage.isPageLoadedSuccess(driver));
+
+		logExtentV5("Admin_07 - Step " + step() + ": open tree folder Customer info");
+		adminCustomersChildCreatePage.openCartTitleAtCustomerEditByText(driver, "Customer info");
 
 		logExtentV5("Admin_07 - Step " + step() + ": Input to Email with value '" + AdminData.CustomerInfo.EMAIL + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Email", AdminData.CustomerInfo.EMAIL);
@@ -461,7 +467,7 @@ public class Nopcommerce_01_Admin extends BaseTest {
 		adminCustomersChildCreatePage = adminCustomerChildPage.clickButtonEditAtTable();
 
 		logExtentV5("Admin_13 - Step " + step() + ": Close tree folder Customer info");
-		adminCustomersChildCreatePage.openCartTitleAtCustomerEditByText(driver, "Customer info");
+		adminCustomersChildCreatePage.closeCartTitleAtCustomerEditByText(driver, "Customer info");
 
 		logExtentV5("Admin_13 - Step " + step() + ": Open tree folder Addresses");
 		adminCustomersChildCreatePage.openCartTitleAtCustomerEditByText(driver, "Addresses");
@@ -523,15 +529,96 @@ public class Nopcommerce_01_Admin extends BaseTest {
 		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Email", AdminData.AddNewAddress.EMAIL));
 		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Phone number", AdminData.AddNewAddress.PHONE_NUMBER));
 		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Fax number", AdminData.AddNewAddress.FAX_NUMBER));
-		assertEquals(adminCustomerChildPage.getAddressInTable("Address"), AdminData.AddNewAddress.COMPANY + "\n" + AdminData.AddNewAddress.ADD1 + "\n"
-				+ AdminData.AddNewAddress.ADD2 + "\n" + AdminData.AddNewAddress.CITY + "," + AdminData.AddNewAddress.ZIP + "\n" + AdminData.AddNewAddress.COUNTRY);
+		assertEquals(adminCustomerChildPage.getAddressInTable("Address"), AdminData.AddNewAddress.ADDRESS_IN_TABLE);
 
 	}
 
-	@AfterClass(alwaysRun = true)
-	public void afterClass() {
-		closeBrowserAndDriver();
+	@Test()
+	public void Admin_14_Edit_Address(Method method) {
+		logStartTest(method.getName() + " - " + this.browser, method.getName());
+		logExtentV5("Admin_14 - Step " + step() + ": Refresh Customer child page");
+		adminCustomerChildPage.refreshCurrentPage(driver);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Click to button edit address");
+		adminCustomerChildPage.clickToButtonEditInTableAddress();
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to Address_FirstName with value '" + AdminData.EditAddress.FIRST_NAME + "'");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_FirstName", AdminData.EditAddress.FIRST_NAME);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to Address_LastName with value '" + AdminData.EditAddress.LAST_NAME + "'");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_LastName", AdminData.EditAddress.LAST_NAME);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to Address_Email with value '" + AdminData.EditAddress.EMAIL + "'");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Email", AdminData.EditAddress.EMAIL);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to Address_Company with value '" + AdminData.EditAddress.COMPANY + "'");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Company", AdminData.EditAddress.COMPANY);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to Country with value '" + AdminData.EditAddress.COUNTRY + "'");
+		adminCustomersChildCreatePage.selectDropdownByName(driver, "Address.CountryId", AdminData.EditAddress.COUNTRY);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to State with value '" + AdminData.EditAddress.STALE + "'");
+		adminCustomersChildCreatePage.selectDropdownByName(driver, "Address.StateProvinceId", AdminData.EditAddress.STALE);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to CITY with value '" + AdminData.EditAddress.CITY + "'");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_City", AdminData.EditAddress.CITY);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to ADD1 with value '" + AdminData.EditAddress.ADD1 + "'");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Address1", AdminData.EditAddress.ADD1);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to ADD2 with value '" + AdminData.EditAddress.ADD2 + "'");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Address2", AdminData.EditAddress.ADD2);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to ZIP with value '" + AdminData.EditAddress.ZIP + "'");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_ZipPostalCode", AdminData.EditAddress.ZIP);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to PHONE_NUMBER with value '" + AdminData.EditAddress.PHONE_NUMBER + "'");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_PhoneNumber", AdminData.EditAddress.PHONE_NUMBER);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Input to FAX_NUMBER with value '" + AdminData.EditAddress.FAX_NUMBER + "'");
+		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_FaxNumber", AdminData.EditAddress.FAX_NUMBER);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Click to button 'Save'");
+		adminCustomersChildCreatePage.clickToButtonByNormalizeSpace(driver, "Save");
+
+		logExtentV5("Admin_14 - Step " + step() + ": Verify message displayed is '" + AdminData.EditAddress.MESSAGE_SUCCESS + "'");
+		assertEquals(adminCustomerChildPage.getMessageSuccessEditAddress(), AdminData.EditAddress.MESSAGE_SUCCESS);
+
+		logExtentV5("Admin_14 - Step " + step() + ": Click to icon 'Close' message");
+		adminCustomerChildPage.clickToIconClose();
+
+		logExtentV5("Admin_14 - Step " + step() + ": Click to link 'Back Customer Detail'");
+		adminCustomerChildPage.clickBackCustomerDetailLink();
+
+		logExtentV5("Admin_14 - Step " + step() + ": Verify Address info in table");
+		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "First name", AdminData.EditAddress.FIRST_NAME));
+		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Last name", AdminData.EditAddress.LAST_NAME));
+		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Email", AdminData.EditAddress.EMAIL));
+		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Phone number", AdminData.EditAddress.PHONE_NUMBER));
+		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Fax number", AdminData.EditAddress.FAX_NUMBER));
+		assertEquals(adminCustomerChildPage.getAddressInTable("Address"), AdminData.EditAddress.ADDRESS_IN_TABLE);
 	}
+
+	@Test()
+	public void Admin_15_Delete_Address(Method method) {
+		logStartTest(method.getName() + " - " + this.browser, method.getName());
+		logExtentV5("Admin_15 - Step " + step() + ": Refresh Customer child page");
+		adminCustomerChildPage.refreshCurrentPage(driver);
+
+		logExtentV5("Admin_15 - Step " + step() + ": Click to button delete address");
+		adminCustomerChildPage.clickToButtonDeleteInTableAddress();
+
+		logExtentV5("Admin_15 - Step " + step() + ": Access Alert delete");
+		adminCustomerChildPage.accessAlertDelete();
+
+		logExtentV5("Admin_14 - Step " + step() + ": Verify Address info in table");
+		assertEquals(adminCustomerChildPage.getMessageDeleteSuccess(), AdminData.EditAddress.MESSAGE_DEL_SUCCESS);
+	}
+
+	// @AfterClass(alwaysRun = true)
+	// public void afterClass() {
+	// closeBrowserAndDriver();
+	// }
 
 	private AdminDashboardPageObject adminDashboardPage;
 	private AdminLoginPageObject adminLoginPage;

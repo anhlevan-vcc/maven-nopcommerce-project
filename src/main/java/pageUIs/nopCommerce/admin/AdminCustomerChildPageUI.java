@@ -11,4 +11,7 @@ public class AdminCustomerChildPageUI {
 	public static final String BACK_CUSTOMER_DETAIL_LINK = "//a[normalize-space()='back to customer details']";
 	public static final String TABLE_HEADER_INDEX_BY_HEADER_TEXT = "//th[contains(text(),'%s')]//preceding-sibling::th";
 	public static final String TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN = "//tbody/tr/td[%s]";
+	public static final String EDIT_BTN_TABLE_ADDRESS = "//a[normalize-space()='Edit']";
+	public static final String DEL_BTN_TABLE_ADDRESS = "//a[normalize-space()='Delete']";
+	public static final String MESSAGE_DEL_SUCCSEE_TEXT = "//div[text()='Addresses']//ancestor::div[@id='customer-address']//div[@class='card-body']//td";
 }

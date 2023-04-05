@@ -23,6 +23,7 @@ public class AdminCustomersChildCreatePageObject extends BasePage {
 	public void selectDropdownRoles(String valueText) {
 		waitIconLoadingInvisible(driver);
 		waitForElementClickable(driver, AdminCustomerChildCreatePageUI.DROPDOWN_ROLES);
+		sleepInSecond(3);
 		selectItemInCustomDropdownDisplayed(driver, AdminCustomerChildCreatePageUI.DROPDOWN_ROLES, AdminCustomerChildCreatePageUI.DROPDOWN_ROLES_CHILD, valueText);
 	}
 
@@ -67,6 +68,7 @@ public class AdminCustomersChildCreatePageObject extends BasePage {
 	public void clickToAddNewAddressButton() {
 		waitIconLoadingInvisible(driver);
 		scrollToElement(driver, AdminCustomerChildCreatePageUI.ADD_NEW_ADDRESS_BUTTON);
+		waiForIconMinusVisible(driver, "Addresses");
 		waitForElementClickable(driver, AdminCustomerChildCreatePageUI.ADD_NEW_ADDRESS_BUTTON);
 		clickToElement(driver, AdminCustomerChildCreatePageUI.ADD_NEW_ADDRESS_BUTTON);
 	}

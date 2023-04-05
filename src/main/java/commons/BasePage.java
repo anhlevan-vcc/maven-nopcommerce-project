@@ -35,7 +35,6 @@ import pageObject.nopCommerce.user.UserHomePageObject;
 import pageObject.nopCommerce.user.UserMyProductReviewPageObject;
 import pageObject.nopCommerce.user.UserOrdersPageObject;
 import pageObject.nopCommerce.user.UserRewardPointPageObject;
-import pageUIs.nopCommerce.admin.AdminCustomerChildCreatePageUI;
 import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
 
 public class BasePage {
@@ -176,6 +175,10 @@ public class BasePage {
 
 	private WebElement getWebElement(WebDriver driver, String locatorType) {
 		return driver.findElement(getByLocator(locatorType));
+	}
+
+	private WebElement getWebElement(WebDriver driver, String locatorType, String... dynamicValues) {
+		return driver.findElement(getByLocator(getDynamicXpath(locatorType, dynamicValues)));
 	}
 
 	protected List<WebElement> getListWebElement(WebDriver driver, String locatorType) {
@@ -943,6 +946,14 @@ public class BasePage {
 		return isElementDisplayed(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex), cellValue);
 	}
 
+	public boolean isProductInfoUnDisplayedInTableAddressAdmin(WebDriver driver, String headerColumnText, String cellValue) {
+		overrideGlobalTimeout(driver, shortTimeout);
+		int columnIndex = getElementSize(driver, BasePageNopCommerceUI.TABLE_HEADER_INDEX_BY_HEADER_TEXT, headerColumnText) + 1;
+		overrideGlobalTimeout(driver, longTimeout);
+		waitForElementVisible(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex), cellValue);
+		return isElementUndisplayed(driver, BasePageNopCommerceUI.TABLE_NAME_VALUE_BY_HEADER_INDEX_ADMIN, String.valueOf(columnIndex), cellValue);
+	}
+
 	/**
 	 * Click to dynamic Button by Text dùng contains(text(),'')
 	 * 
@@ -979,8 +990,22 @@ public class BasePage {
 
 	public void openCartTitleAtCustomerEditByText(WebDriver driver, String titleText) {
 		waitIconLoadingInvisible(driver);
-		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_TITLE_BY_TEXT, titleText);
-		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_TITLE_BY_TEXT, titleText);
+		if (isElementUndisplayed(driver, BasePageNopCommerceUI.ICON_MINUS, titleText)) {
+			waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_TITLE_BY_TEXT, titleText);
+			clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_TITLE_BY_TEXT, titleText);
+		}
+	}
+
+	public void closeCartTitleAtCustomerEditByText(WebDriver driver, String titleText) {
+		waitIconLoadingInvisible(driver);
+		if (getWebElement(driver, BasePageNopCommerceUI.ICON_MINUS, titleText).isDisplayed()) {
+			waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_TITLE_BY_TEXT, titleText);
+			clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_TITLE_BY_TEXT, titleText);
+		}
+	}
+
+	public void waiForIconMinusVisible(WebDriver driver, String titleText) {
+		waitForElementVisible(driver, BasePageNopCommerceUI.ICON_MINUS, titleText);
 	}
 
 	/**
