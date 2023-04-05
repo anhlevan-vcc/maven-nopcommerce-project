@@ -167,64 +167,64 @@ public class Nopcommerce_01_Admin extends BaseTest {
 	@Test()
 	public void Admin_07_Go_Directly_To_Product_SKU(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Show tree folder Customers");
 		adminDashboardPage.showFolderTreeByTextAdmin(driver, "Customers");
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Open Customers page");
 		adminCustomerChildPage = (AdminCustomerChildPageObject) adminDashboardPage.openPageCustomerChildByName(driver, "Customers");
 
 		logExtentV5("Admin_07 - Step " + step() + ": Click to button 'Add new'");
 		adminCustomersChildCreatePage = adminCustomerChildPage.clickToButtonAddNew();
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Input to Email with value '" + AdminData.CustomerInfo.EMAIL + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Email", AdminData.CustomerInfo.EMAIL);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Input to Password with value '" + AdminData.CustomerInfo.PASSWORD + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Password", AdminData.CustomerInfo.PASSWORD);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Input to FirstName with value '" + AdminData.CustomerInfo.FIRST_NAME + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "FirstName", AdminData.CustomerInfo.FIRST_NAME);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Input to LastName with value '" + AdminData.CustomerInfo.LAST_NAME + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "LastName", AdminData.CustomerInfo.LAST_NAME);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Check to radio button Gender with value '" + AdminData.CustomerInfo.GENDER + "'");
 		adminCustomersChildCreatePage.clickToCheckboxByLabelAdmin(driver, AdminData.CustomerInfo.GENDER);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Input to DateOfBirth with value '" + AdminData.CustomerInfo.DATE_OF_BIRTH + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "DateOfBirth", AdminData.CustomerInfo.DATE_OF_BIRTH);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Input to Company with value '" + AdminData.CustomerInfo.COMPANY + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Company", AdminData.CustomerInfo.COMPANY);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Unselect to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER + "'");
 		adminCustomersChildCreatePage.unSelectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Select to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES + "'");
 		adminCustomersChildCreatePage.selectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Input to Comment with value '" + AdminData.CustomerInfo.ADMIN_COMMENT + "'");
 		adminCustomersChildCreatePage.inputToTextaraComment(AdminData.CustomerInfo.ADMIN_COMMENT);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Click to button 'Save and continue'");
 		adminCustomersChildCreatePage.clickToButtonSaveAndContinue();
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Verify message displayed is '" + AdminData.CustomerInfo.MESSAGE_SUCCESS + "'");
 		assertEquals(adminCustomersChildCreatePage.getMessageSuccess(), AdminData.CustomerInfo.MESSAGE_SUCCESS);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Close message");
 		adminCustomersChildCreatePage.clickToIconClose();
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Click to link 'Back to customer'");
 		adminCustomerChildPage = adminCustomersChildCreatePage.clickToLinkBackToCustom();
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Unselect to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER + "'");
 		adminCustomerChildPage.unSelectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Select to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES + "'");
 		adminCustomerChildPage.selectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES);
 
-		logExtentV5("Admin_07 - Step " + step() + ": ");
+		logExtentV5("Admin_07 - Step " + step() + ": Click to button 'Search'");
 		adminCustomerChildPage.clickToButtonByIDAdmin(driver, "search-customers");
 
 		logExtentV5("Admin_07 - Step " + step() + ": Verify customer info in table");
@@ -235,25 +235,25 @@ public class Nopcommerce_01_Admin extends BaseTest {
 	@Test()
 	public void Admin_08_Search_Customer_With_Email(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
-		logExtentV5("Admin_08 - Step " + step() + ": ");
+		logExtentV5("Admin_08 - Step " + step() + ": Open Dashboard page");
 		adminDashboardPage = (AdminDashboardPageObject) adminCustomerChildPage.openPageAtDashboardByName(driver, "Dashboard");
 
-		logExtentV5("Admin_08 - Step " + step() + ": ");
+		logExtentV5("Admin_08 - Step " + step() + ": Show tree folder Customers");
 		adminDashboardPage.showFolderTreeByTextAdmin(driver, "Customers");
 
-		logExtentV5("Admin_08 - Step " + step() + ": ");
+		logExtentV5("Admin_08 - Step " + step() + ": Open Customers page");
 		adminCustomerChildPage = (AdminCustomerChildPageObject) adminDashboardPage.openPageCustomerChildByName(driver, "Customers");
 
-		logExtentV5("Admin_08 - Step " + step() + ": ");
+		logExtentV5("Admin_08 - Step " + step() + ": Input to Email with value '" + AdminData.CustomerInfo.EMAIL + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchEmail", AdminData.CustomerInfo.EMAIL);
 
-		logExtentV5("Admin_08 - Step " + step() + ": ");
+		logExtentV5("Admin_08 - Step " + step() + ": Unselect to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER + "'");
 		adminCustomerChildPage.unSelectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER);
 
-		logExtentV5("Admin_08 - Step " + step() + ": ");
+		logExtentV5("Admin_08 - Step " + step() + ": Select to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES + "'");
 		adminCustomerChildPage.selectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES);
 
-		logExtentV5("Admin_08 - Step " + step() + ": ");
+		logExtentV5("Admin_08 - Step " + step() + ": Click to button 'Search'");
 		adminCustomerChildPage.clickToButtonByIDAdmin(driver, "search-customers");
 
 		logExtentV5("Admin_08 - Step " + step() + ": Verify customer info in table");
@@ -266,22 +266,22 @@ public class Nopcommerce_01_Admin extends BaseTest {
 	@Test()
 	public void Admin_09_Search_Customer_With_Firstname_Lastname(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
-		logExtentV5("Admin_09 - Step " + step() + ": ");
+		logExtentV5("Admin_09 - Step " + step() + ": Refresh Customer child page");
 		adminCustomerChildPage.refreshCurrentPage(driver);
 
-		logExtentV5("Admin_09 - Step " + step() + ": ");
+		logExtentV5("Admin_09 - Step " + step() + ": Input to FirstName with value '" + AdminData.CustomerInfo.FIRST_NAME + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchFirstName", AdminData.CustomerInfo.FIRST_NAME);
 
-		logExtentV5("Admin_09 - Step " + step() + ": ");
+		logExtentV5("Admin_09 - Step " + step() + ": Input to LastName with value '" + AdminData.CustomerInfo.LAST_NAME + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchLastName", AdminData.CustomerInfo.LAST_NAME);
 
-		logExtentV5("Admin_09 - Step " + step() + ": ");
+		logExtentV5("Admin_09 - Step " + step() + ": Unselect to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER + "'");
 		adminCustomerChildPage.unSelectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER);
 
-		logExtentV5("Admin_09 - Step " + step() + ": ");
+		logExtentV5("Admin_09 - Step " + step() + ": Select to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES + "'");
 		adminCustomerChildPage.selectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES);
 
-		logExtentV5("Admin_09 - Step " + step() + ": ");
+		logExtentV5("Admin_09 - Step " + step() + ": Click to button 'Search'");
 		adminCustomerChildPage.clickToButtonByIDAdmin(driver, "search-customers");
 
 		logExtentV5("Admin_09 - Step " + step() + ": Verify customer info in table");
@@ -294,19 +294,19 @@ public class Nopcommerce_01_Admin extends BaseTest {
 	@Test()
 	public void Admin_10_Search_Customer_With_Company(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
-		logExtentV5("Admin_10 - Step " + step() + ": ");
+		logExtentV5("Admin_10 - Step " + step() + ": Refresh Customer child page");
 		adminCustomerChildPage.refreshCurrentPage(driver);
 
-		logExtentV5("Admin_10 - Step " + step() + ": ");
+		logExtentV5("Admin_10 - Step " + step() + ": Input to Company with value '" + AdminData.CustomerInfo.COMPANY + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchCompany", AdminData.CustomerInfo.COMPANY);
 
-		logExtentV5("Admin_10 - Step " + step() + ": ");
+		logExtentV5("Admin_10 - Step " + step() + ": Unselect to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER + "'");
 		adminCustomerChildPage.unSelectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER);
 
-		logExtentV5("Admin_10 - Step " + step() + ": ");
+		logExtentV5("Admin_10 - Step " + step() + ": Select to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES + "'");
 		adminCustomerChildPage.selectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES);
 
-		logExtentV5("Admin_10 - Step " + step() + ": ");
+		logExtentV5("Admin_10 - Step " + step() + ": Click to button 'Search'");
 		adminCustomerChildPage.clickToButtonByIDAdmin(driver, "search-customers");
 
 		logExtentV5("Admin_10 - Step " + step() + ": Verify customer info in table");
@@ -319,34 +319,34 @@ public class Nopcommerce_01_Admin extends BaseTest {
 	@Test()
 	public void Admin_11_Search_Customer_With_Full_Data(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_11 - Step " + step() + ": Refresh Customer child page");
 		adminCustomerChildPage.refreshCurrentPage(driver);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_11 - Step " + step() + ": Input to Email with value '" + AdminData.CustomerInfo.EMAIL + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchEmail", AdminData.CustomerInfo.EMAIL);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_11 - Step " + step() + ": Input to FirstName with value '" + AdminData.CustomerInfo.FIRST_NAME + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchFirstName", AdminData.CustomerInfo.FIRST_NAME);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_11 - Step " + step() + ": Input to LastName with value '" + AdminData.CustomerInfo.LAST_NAME + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchLastName", AdminData.CustomerInfo.LAST_NAME);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_11 - Step " + step() + ": Input to LastName with value '" + AdminData.CustomerInfo.DAY + "'");
 		adminCustomerChildPage.selectDropdownByName(driver, "SearchDayOfBirth", AdminData.CustomerInfo.DAY);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_11 - Step " + step() + ": Select to Roles with value '" + AdminData.CustomerInfo.MONTH + "'");
 		adminCustomerChildPage.selectDropdownByName(driver, "SearchMonthOfBirth", AdminData.CustomerInfo.MONTH);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_11 - Step " + step() + ": Input to Company with value '" + AdminData.CustomerInfo.COMPANY + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchCompany", AdminData.CustomerInfo.COMPANY);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_11 - Step " + step() + ": Unselect to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER + "'");
 		adminCustomerChildPage.unSelectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES_RESGISTER);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_11 - Step " + step() + ": Select to Roles with value '" + AdminData.CustomerInfo.CUSTOMER_ROLES + "'");
 		adminCustomerChildPage.selectDropdownRoles(AdminData.CustomerInfo.CUSTOMER_ROLES);
 
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_11 - Step " + step() + ": Click to button 'Search'");
 		adminCustomerChildPage.clickToButtonByIDAdmin(driver, "search-customers");
 
 		logExtentV5("Admin_11 - Step " + step() + ": Verify customer info in table");
@@ -358,64 +358,64 @@ public class Nopcommerce_01_Admin extends BaseTest {
 	@Test()
 	public void Admin_12_Edit_Customer(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Click to button 'Edit'");
 		adminCustomersChildCreatePage = adminCustomerChildPage.clickButtonEditAtTable();
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to Email with value '" + AdminData.CustomerEditInfo.EMAIL + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Email", AdminData.CustomerEditInfo.EMAIL);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to Password with value '" + AdminData.CustomerEditInfo.PASSWORD + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Password", AdminData.CustomerEditInfo.PASSWORD);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to FirstName with value '" + AdminData.CustomerEditInfo.FIRST_NAME + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "FirstName", AdminData.CustomerEditInfo.FIRST_NAME);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to LastName with value '" + AdminData.CustomerEditInfo.LAST_NAME + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "LastName", AdminData.CustomerEditInfo.LAST_NAME);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to GENDER with value '" + AdminData.CustomerEditInfo.GENDER + "'");
 		adminCustomersChildCreatePage.clickToCheckboxByLabelAdmin(driver, AdminData.CustomerEditInfo.GENDER);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to DateOfBirth with value '" + AdminData.CustomerEditInfo.DATE_OF_BIRTH + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "DateOfBirth", AdminData.CustomerEditInfo.DATE_OF_BIRTH);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to Company with value '" + AdminData.CustomerEditInfo.COMPANY + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Company", AdminData.CustomerEditInfo.COMPANY);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to COMMENT with value '" + AdminData.CustomerEditInfo.ADMIN_COMMENT + "'");
 		adminCustomersChildCreatePage.inputToTextaraComment(AdminData.CustomerEditInfo.ADMIN_COMMENT);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Click to button 'Save'");
 		adminCustomerChildPage = adminCustomersChildCreatePage.clickToButtonSave();
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Verify message displayed is '" + AdminData.CustomerEditInfo.MESSAGE_SUCCESS + "'");
 		assertEquals(adminCustomerChildPage.getMessageSuccessEdit(), AdminData.CustomerEditInfo.MESSAGE_SUCCESS);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to SearchEmail with value '" + AdminData.CustomerEditInfo.EMAIL + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchEmail", AdminData.CustomerEditInfo.EMAIL);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to SearchFirstName with value '" + AdminData.CustomerEditInfo.FIRST_NAME + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchFirstName", AdminData.CustomerEditInfo.FIRST_NAME);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to SearchLastName with value '" + AdminData.CustomerEditInfo.LAST_NAME + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchLastName", AdminData.CustomerEditInfo.LAST_NAME);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to SearchDayOfBirth with value '" + AdminData.CustomerEditInfo.DAY + "'");
 		adminCustomerChildPage.selectDropdownByName(driver, "SearchDayOfBirth", AdminData.CustomerEditInfo.DAY);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to SearchMonthOfBirth with value '" + AdminData.CustomerEditInfo.MONTH + "'");
 		adminCustomerChildPage.selectDropdownByName(driver, "SearchMonthOfBirth", AdminData.CustomerEditInfo.MONTH);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Input to SearchCompany with value '" + AdminData.CustomerEditInfo.COMPANY + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchCompany", AdminData.CustomerEditInfo.COMPANY);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Unselect to Roles with value '" + AdminData.CustomerEditInfo.CUSTOMER_ROLES_RESGISTER + "'");
 		adminCustomerChildPage.unSelectDropdownRoles(AdminData.CustomerEditInfo.CUSTOMER_ROLES_RESGISTER);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Select to Roles with value '" + AdminData.CustomerEditInfo.CUSTOMER_ROLES + "'");
 		adminCustomerChildPage.selectDropdownRoles(AdminData.CustomerEditInfo.CUSTOMER_ROLES);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_12 - Step " + step() + ": Click to button 'Search'");
 		adminCustomerChildPage.clickToButtonByIDAdmin(driver, "search-customers");
 
 		logExtentV5("Admin_12 - Step " + step() + ": Verify customer info in table");
@@ -427,97 +427,97 @@ public class Nopcommerce_01_Admin extends BaseTest {
 	@Test()
 	public void Admin_13_Add_New_Address(Method method) {
 		logStartTest(method.getName() + " - " + this.browser, method.getName());
-		logExtentV5("Admin_11 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Refresh Customer child page");
 		adminCustomerChildPage.refreshCurrentPage(driver);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to SearchEmail with value '" + AdminData.CustomerEditInfo.EMAIL + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchEmail", AdminData.CustomerEditInfo.EMAIL);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to SearchFirstName with value '" + AdminData.CustomerEditInfo.FIRST_NAME + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchFirstName", AdminData.CustomerEditInfo.FIRST_NAME);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to SearchLastName with value '" + AdminData.CustomerEditInfo.LAST_NAME + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchLastName", AdminData.CustomerEditInfo.LAST_NAME);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to SearchDayOfBirth with value '" + AdminData.CustomerEditInfo.DAY + "'");
 		adminCustomerChildPage.selectDropdownByName(driver, "SearchDayOfBirth", AdminData.CustomerEditInfo.DAY);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to SearchMonthOfBirth with value '" + AdminData.CustomerEditInfo.MONTH + "'");
 		adminCustomerChildPage.selectDropdownByName(driver, "SearchMonthOfBirth", AdminData.CustomerEditInfo.MONTH);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to SearchCompany with value '" + AdminData.CustomerEditInfo.COMPANY + "'");
 		adminCustomerChildPage.inputToTextboxByIDAdmin(driver, "SearchCompany", AdminData.CustomerEditInfo.COMPANY);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Unselect to Roles with value '" + AdminData.CustomerEditInfo.CUSTOMER_ROLES_RESGISTER + "'");
 		adminCustomerChildPage.unSelectDropdownRoles(AdminData.CustomerEditInfo.CUSTOMER_ROLES_RESGISTER);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Select to Roles with value '" + AdminData.CustomerEditInfo.CUSTOMER_ROLES + "'");
 		adminCustomerChildPage.selectDropdownRoles(AdminData.CustomerEditInfo.CUSTOMER_ROLES);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Click to button 'Search'");
 		adminCustomerChildPage.clickToButtonByIDAdmin(driver, "search-customers");
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Click to button 'Edit' in table");
 		adminCustomersChildCreatePage = adminCustomerChildPage.clickButtonEditAtTable();
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Close tree folder Customer info");
 		adminCustomersChildCreatePage.openCartTitleAtCustomerEditByText(driver, "Customer info");
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Open tree folder Addresses");
 		adminCustomersChildCreatePage.openCartTitleAtCustomerEditByText(driver, "Addresses");
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Click to button 'Add new'");
 		adminCustomersChildCreatePage.clickToAddNewAddressButton();
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to Address_FirstName with value '" + AdminData.AddNewAddress.FIRST_NAME + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_FirstName", AdminData.AddNewAddress.FIRST_NAME);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to Address_LastName with value '" + AdminData.AddNewAddress.LAST_NAME + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_LastName", AdminData.AddNewAddress.LAST_NAME);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to Address_Email with value '" + AdminData.AddNewAddress.EMAIL + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Email", AdminData.AddNewAddress.EMAIL);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to Address_Company with value '" + AdminData.AddNewAddress.COMPANY + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Company", AdminData.AddNewAddress.COMPANY);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to Country with value '" + AdminData.AddNewAddress.COUNTRY + "'");
 		adminCustomersChildCreatePage.selectDropdownByName(driver, "Address.CountryId", AdminData.AddNewAddress.COUNTRY);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to State with value '" + AdminData.AddNewAddress.STALE + "'");
 		adminCustomersChildCreatePage.selectDropdownByName(driver, "Address.StateProvinceId", AdminData.AddNewAddress.STALE);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to CITY with value '" + AdminData.AddNewAddress.CITY + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_City", AdminData.AddNewAddress.CITY);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to ADD1 with value '" + AdminData.AddNewAddress.ADD1 + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Address1", AdminData.AddNewAddress.ADD1);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to ADD2 with value '" + AdminData.AddNewAddress.ADD2 + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_Address2", AdminData.AddNewAddress.ADD2);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to ZIP with value '" + AdminData.AddNewAddress.ZIP + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_ZipPostalCode", AdminData.AddNewAddress.ZIP);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to PHONE_NUMBER with value '" + AdminData.AddNewAddress.PHONE_NUMBER + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_PhoneNumber", AdminData.AddNewAddress.PHONE_NUMBER);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Input to FAX_NUMBER with value '" + AdminData.AddNewAddress.FAX_NUMBER + "'");
 		adminCustomersChildCreatePage.inputToTextboxByIDAdmin(driver, "Address_FaxNumber", AdminData.AddNewAddress.FAX_NUMBER);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Click to button 'Save'");
 		adminCustomersChildCreatePage.clickToButtonByNormalizeSpace(driver, "Save");
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Verify message displayed is '" + AdminData.AddNewAddress.MESSAGE_SUCCESS + "'");
 		assertEquals(adminCustomerChildPage.getMessageSuccessAddress(), AdminData.AddNewAddress.MESSAGE_SUCCESS);
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Click to icon 'Close' message");
 		adminCustomerChildPage.clickToIconClose();
 
-		logExtentV5("Admin_12 - Step " + step() + ": ");
+		logExtentV5("Admin_13 - Step " + step() + ": Click to link 'Back Customer Detail'");
 		adminCustomerChildPage.clickBackCustomerDetailLink();
 
-		logExtentV5("Admin_12 - Step " + step() + ": Verify customer info in table");
+		logExtentV5("Admin_13 - Step " + step() + ": Verify Address info in table");
 		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "First name", AdminData.AddNewAddress.FIRST_NAME));
 		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Last name", AdminData.AddNewAddress.LAST_NAME));
 		assertTrue(adminCustomerChildPage.isProductInfoDisplayedInTableAddressAdmin(driver, "Email", AdminData.AddNewAddress.EMAIL));
@@ -528,10 +528,10 @@ public class Nopcommerce_01_Admin extends BaseTest {
 
 	}
 
-	// @AfterClass(alwaysRun = true)
-	// public void afterClass() {
-	// closeBrowserAndDriver();
-	// }
+	@AfterClass(alwaysRun = true)
+	public void afterClass() {
+		closeBrowserAndDriver();
+	}
 
 	private AdminDashboardPageObject adminDashboardPage;
 	private AdminLoginPageObject adminLoginPage;

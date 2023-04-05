@@ -1,15 +1,15 @@
-1680540412249	geckodriver	INFO	Listening on 127.0.0.1:19487
-1680540412919	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ANHMAI\\AppData\\Local\\Temp\\rust_mozprofileAlhPxV"
+1680576047897	geckodriver	INFO	Listening on 127.0.0.1:7204
+1680576048499	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofileUZPMIp"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
-1680540413301	Marionette	INFO	Marionette enabled
+1680576049179	Marionette	INFO	Marionette enabled
 Dynamically enable window occlusion 0
-1680540413306	Marionette	INFO	Listening on port 61583
-Read port: 61583
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ANHMAI\\AppData\\Local\\Temp\\rust_mozprofileAlhPxV\\search.json.mozlz4", (void 0)))
+1680576049183	Marionette	INFO	Listening on port 62521
+Read port: 62521
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofileUZPMIp\\search.json.mozlz4", (void 0)))
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://admin-demo.nopcommerce.com."
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://admin-demo.nopcommerce.com."
-1680540429904	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+1680576063613	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
 TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
 TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
 interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
@@ -21,10 +21,10 @@ k/t[r]@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v
 t@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:104:849
 initOnce@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:104:1251
 init@https://admin-demo.nopcommerce.com/js/qlvfucyxvmxlswx0bx1vxg.scripts.js?v=M1Ov74NfRaEDWnAXADkDp5tuu80:105:637
-@https://admin-demo.nopcommerce.com/Admin/Customer/Edit/144:2574:46
+@https://admin-demo.nopcommerce.com/Admin/Customer/Edit/123:2574:46
 e@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30038
 Deferred/then/l/</t<@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30340
-1680540496877	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+1680576113433	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
 TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
 TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
 interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
@@ -36,6 +36,8 @@ k/t[r]@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v
 t@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:103:849
 initOnce@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:103:1251
 init@https://admin-demo.nopcommerce.com/js/ukoh1k9bahbdtmmn_wkbdq.scripts.js?v=RTom3tzFkMXP436SMzwIprzSjxo:104:637
-@https://admin-demo.nopcommerce.com/Admin/Customer/AddressEdit?addressId=23&customerId=144:1321:46
+@https://admin-demo.nopcommerce.com/Admin/Customer/AddressEdit?addressId=22&customerId=123:1319:46
 e@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30038
 Deferred/then/l/</t<@https://admin-demo.nopcommerce.com/lib_npm/jquery/jquery.min.js?v=LO1ZLwpRUE4YpyjPJfd6yZIfA9I:2:30340
+1680576119432	Marionette	INFO	Stopped listening on port 62521
+Dynamically enable window occlusion 1
