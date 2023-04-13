@@ -111,6 +111,7 @@ public class AdminCustomerChildPageObject extends BasePage {
 	}
 
 	public void accessAlertDelete() {
+		sleepInSecond(2);
 		waitForAlertPresence(driver);
 		acceptAlert(driver);
 	}

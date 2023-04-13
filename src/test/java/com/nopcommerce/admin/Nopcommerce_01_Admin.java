@@ -615,10 +615,10 @@ public class Nopcommerce_01_Admin extends BaseTest {
 		assertEquals(adminCustomerChildPage.getMessageDeleteSuccess(), AdminData.EditAddress.MESSAGE_DEL_SUCCESS);
 	}
 
-	// @AfterClass(alwaysRun = true)
-	// public void afterClass() {
-	// closeBrowserAndDriver();
-	// }
+	@AfterClass(alwaysRun = true)
+	public void afterClass() {
+		closeBrowserAndDriver();
+	}
 
 	private AdminDashboardPageObject adminDashboardPage;
 	private AdminLoginPageObject adminLoginPage;

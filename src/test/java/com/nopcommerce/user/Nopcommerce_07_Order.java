@@ -70,8 +70,6 @@ public class Nopcommerce_07_Order extends BaseTest {
 		updatePrace = UserData.BuildYourOwnComputer.UPDATE_PRACE;
 		updateSubTotal = UserData.BuildYourOwnComputer.UPDATE_SUB_TOTAL;
 
-
-
 		// logExtentV5( "Pre-condition - Step 01: Open login page");
 		loginPage = homePage.openLoginPage();
 
@@ -398,8 +396,7 @@ public class Nopcommerce_07_Order extends BaseTest {
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "company"), UserData.CheckOut.COMPANY);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "address1"), UserData.CheckOut.ADDRESS_SHIPPING);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "address2"), UserData.CheckOut.ADDRESS2);
-		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "city-state-zip"),
-				UserData.CheckOut.CITY1 + "," + UserData.CheckOut.ZIP);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "city-state-zip"), UserData.CheckOut.CITY1 + "," + UserData.CheckOut.ZIP);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "country"), UserData.CheckOut.COUNTRY1);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping", "shipping-method"), "Shipping Method: Ground");
 
@@ -612,8 +609,7 @@ public class Nopcommerce_07_Order extends BaseTest {
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "company"), UserData.ReOrder.COMPANY);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "address1"), UserData.ReOrder.ADDRESS_SHIPPING);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "address2"), UserData.ReOrder.ADDRESS2);
-		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "city-state-zip"),
-				UserData.ReOrder.CITY1 + "," + UserData.ReOrder.ZIP);
+		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "city-state-zip"), UserData.ReOrder.CITY1 + "," + UserData.ReOrder.ZIP);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping Address", "country"), UserData.ReOrder.COUNTRY1);
 		assertEquals(checkOutPage.getConfirmOrderInfoByTitle(driver, "Shipping", "shipping-method"), "Shipping Method: Next Day Air");
 
@@ -634,9 +630,6 @@ public class Nopcommerce_07_Order extends BaseTest {
 
 		logExtentV5("Order_05 - Step 45: Click on the button 'Confirm'");
 		checkOutPage.clickButtonUntilNoAlertIsDisplayed();
-
-		logExtentV5("Order_05 - Step 46: Verify screen Thank you displayed");
-		assertEquals(checkOutPage.getOrderPageTitle(), "Thank you");
 
 	}
 

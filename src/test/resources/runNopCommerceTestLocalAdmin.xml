@@ -18,7 +18,7 @@
 						<exclude name="com.nopcommerce.*" />
 				</packages>
 				<classes>
-						<exclude name="com.nopcommerce.admin.Nopcommerce_01_Admin" />
+						<class name="com.nopcommerce.admin.Nopcommerce_01_Admin" />
 				</classes>
 		</test>
 		<test name="Run on Chrome">
@@ -30,7 +30,7 @@
 						<exclude name="com.nopcommerce.*" />
 				</packages>
 				<classes>
-						<class name="com.nopcommerce.admin.Nopcommerce_01_Admin" />
+						<exclude name="com.nopcommerce.admin.Nopcommerce_01_Admin" />
 				</classes>
 		</test>
 </suite>
