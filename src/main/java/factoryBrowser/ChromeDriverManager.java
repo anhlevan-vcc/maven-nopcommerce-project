@@ -19,7 +19,7 @@ public class ChromeDriverManager implements BrowserFactory {
 	public WebDriver getBrowserDriver() {
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
-		options.setAcceptInsecureCerts(true);
+		// options.setAcceptInsecureCerts(true);
 		// Ẩn log trên Console
 		System.setProperty("webdriver.chrome.args", "--disable-logging");
 		System.setProperty("webdriver.chrome.silentOutput", "true");
@@ -47,11 +47,13 @@ public class ChromeDriverManager implements BrowserFactory {
 
 		// Ẩn lưu pass
 
-		Map<String, Object> prefs = new HashMap<String, Object>();
-		prefs.put("profile.default_content_setting_values.notifications", 2);
-		prefs.put("credentials_enable_service", false);
-		prefs.put("profile.password_manager_enabled", false);
-		options.setExperimentalOption("prefs", prefs);
+		options.addArguments("--disable-save-password-bubble");
+
+		// Map<String, Object> prefs = new HashMap<String, Object>();
+		// prefs.put("profile.default_content_setting_values.notifications", 2);
+		// prefs.put("credentials_enable_service", false);
+		// prefs.put("profile.password_manager_enabled", false);
+		// options.setExperimentalOption("prefs", prefs);
 
 		// Sét auto lưu file download vào thư mục
 		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
