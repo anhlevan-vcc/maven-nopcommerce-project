@@ -469,6 +469,20 @@ public class BasePage {
 		action.sendKeys(getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)), key).perform();
 	}
 
+	protected void openLinkNewWindow(WebDriver driver, String locatorType) {
+		Actions action = new Actions(driver);
+		WebElement link = getWebElement(driver, locatorType);
+		action.moveToElement(link).contextClick(link).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
+
+	}
+
+	protected void openLinkNewWindow(WebDriver driver, String locatorType, String... dynamicValues) {
+		Actions action = new Actions(driver);
+		WebElement link = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
+		action.moveToElement(link).contextClick(link).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
+
+	}
+
 	protected void scrollToBottomPage(WebDriver driver) {
 		JavascriptExecutor jsExecutor = ((JavascriptExecutor) driver);
 		jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
