@@ -108,3 +108,5 @@
 [INFO ] [2023-03-30 00:22:49,441] Driver instance name = firefoxdriver: firefox on windows (ed6e3e17-678c-42c8-8d56-551690f0fbf0)
 [INFO ] [2023-04-13 23:37:32,031] OS name = windows 10
 [INFO ] [2023-04-13 23:37:32,055] Driver instance name = firefoxdriver: firefox on windows (003532a1-a2ad-4e1b-bf48-89c05094c027)
+[INFO ] [2023-05-18 01:39:27,643] OS name = windows 10
+[INFO ] [2023-05-18 01:39:27,664] Driver instance name = chromedriver: chrome on windows (3d209c5348c70208b397fb4570d2363f)
